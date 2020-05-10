@@ -1,0 +1,22 @@
+form{
+    margin: 100px auto;
+    padding: 20px;
+    width: max-content;
+    border: 1px solid darkgrey;
+    border-radius: 5px;
+    background-color: whitesmoke;
+}
+mat-form-field{
+    width: 90%;
+}
+
+#ulica{
+    width: 90%;
+}
+
+/*Uklanja strelice kod input type number*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

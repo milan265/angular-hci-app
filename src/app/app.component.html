@@ -23,7 +23,13 @@
                     <mat-icon>home</mat-icon>
                 </button>
             </div>
+            <div  fxFlex fxLayoutAlign="end" fxLayoutGap="30px" fxHide.lt-md>
+                <button *ngIf="!ulogovan" mat-button color="primary"><a routerLink="/registracija">Registrujte se</a></button>
+                <button *ngIf="!ulogovan" mat-raised-button color="warn"><a routerLink="/prijava">Prijavite se</a></button>
+                <button *ngIf="ulogovan" mat-raised-button color="warn" routerLink="/" (click)="odjaviSe()">Odjavite se</button>
+            </div>
         </mat-toolbar>
+
         <router-outlet></router-outlet>
 
         <mat-toolbar color="primary" fxLayout="column">

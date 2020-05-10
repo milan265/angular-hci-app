@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   greska404: boolean = false;
-  ulogovan: boolean;
+  ulogovan: boolean = false;
   ruteNijePrijavljen: Array<string> = ["/","/registracija","/prijava","/uslovi-koriscenja"];  
   rutePrijavljen: Array<string> = ["/"];
   prijavljenKorisnikIme: string;

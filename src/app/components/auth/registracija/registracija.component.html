@@ -1,1 +1,68 @@
-<p>registracija works!</p>
+<section>
+    <div fxHide.lt-md fxFlex="40"></div>
+    <form fxFlex="80" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <mat-form-field>
+            <input type="text" matInput placeholder="Ime" ngModel name="ime" #ime="ngModel" required>
+            <mat-error *ngIf="ime.hasError('required')">Polje mora biti popunjeno</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input type="text" matInput placeholder="Prezime" ngModel name="prezime" #prezime="ngModel" required>
+            <mat-error *ngIf="prezime.hasError('required')">Polje mora biti popunjeno</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>E-mail</mat-label>
+            <input type="email" matInput placeholder="primer@mail.com" ngModel name="email" email required #emailInput="ngModel">
+            <mat-error *ngIf="emailInput.hasError('required')">Polje mora biti popunjeno</mat-error>
+            <mat-error *ngIf="!emailInput.hasError('required')">E-mail nije u dobrom formatu</mat-error>
+        </mat-form-field>
+        <mat-form-field hintLabel="Lozinka mora imati više od 8 karaktera">
+            <input [type]="tipLozinke" matInput placeholder="Lozinka" ngModel name="lozinka" required minlength="8" #lozinkaInput="ngModel">
+            <button type="button" matSuffix mat-icon-button (click)="sakrijLozinku()">
+                <mat-icon>{{vidljivost}}</mat-icon>
+            </button>
+            <mat-hint align="end">{{lozinkaInput.value?.length}}/8</mat-hint>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Broj telefona</mat-label>
+            <input type="number" matInput placeholder="011222333" ngModel name="brojTelefona" #brojTelefona="ngModel" required>
+            <mat-error *ngIf="brojTelefona.hasError('required')">Polje mora biti popunjeno</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Grad</mat-label>
+            <mat-select [(value)]="izabranGrad" (selectionChange)="podesiRegione()" required>
+                <mat-option *ngFor="let grad of gradovi" [value]="grad">
+                           {{grad}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Region</mat-label>
+            <mat-select required>
+                <mat-option *ngFor="let region of regioni" [value]="region">
+                           {{region}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div id="ulica" fxLayoutAlign="space-between center">
+            <mat-form-field fxFlex="60">
+                <input type="text" matInput placeholder="Ulica" ngModel name="ulica" #ulica="ngModel" required>
+                <mat-error *ngIf="ulica.hasError('required')">Polje mora biti popunjeno</mat-error>
+            </mat-form-field>
+            <mat-form-field fxFlex="15">
+                <input type="text" matInput placeholder="Broj" ngModel name="broj" #broj="ngModel" required>
+                <mat-error *ngIf="broj.hasError('required')">Polje mora biti popunjeno</mat-error>
+            </mat-form-field>
+            <mat-form-field fxFlex="15">
+                <input type="text" matInput placeholder="Stan" ngModel name="stan" #stan="ngModel">
+            </mat-form-field>
+        </div>
+        <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Registruj se</button>
+        <div *ngIf="greska" fxLayout="column" fxLayoutAlign="center center">
+            <mat-label> {{greskaPoruka}}</mat-label>
+            <a routerLink="/prijava">Prijavite se</a>
+        </div>
+        <a routerLink="/uslovi-koriscenja">Uslovi korišćenja</a>
+        <mat-checkbox color="primary" ngModel name="usloviKoriscenja" required>Prihvatam uslove korišćenja</mat-checkbox>
+    </form>
+    <div fxHide.lt-md fxFlex="40"></div>
+</section>
