@@ -33,3 +33,14 @@ mat-toolbar:last-child p{
     margin-top: 0px;
 }
 
+img{
+    width: 150px;
+    height: 50px;
+}
+
+.logo{
+    margin-left: 5vh;
+}
+.prijava-registracija{
+    margin-right: 5vh;
+}

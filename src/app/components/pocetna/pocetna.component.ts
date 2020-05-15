@@ -8,10 +8,14 @@ import { Title } from '@angular/platform-browser';
 })
 export class PocetnaComponent implements OnInit {
 
+  slika:string = "url('../../../assets/slike/pocetna.jpg')";
+
   constructor(private titleService: Title) { }
 
   ngOnInit() {
     this.titleService.setTitle("Dostava hrane");
   }
-
+  getSlika(){
+    return this.slika;
+  }
 }
