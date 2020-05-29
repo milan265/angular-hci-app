@@ -13,13 +13,45 @@
                 <mat-icon>person_outline</mat-icon>
                 Registrujte se
             </a>
+            <a *ngIf="ulogovan" mat-list-item routerLink="/profil" (click)="sidenav.close()">
+                <mat-icon>person_outline</mat-icon>
+                {{prijavljenKorisnikIme}}
+            </a>
+            <a *ngIf="ulogovan" mat-list-item routerLink="/narudzbine" (click)="sidenav.close()">
+                <mat-icon>list</mat-icon>
+                Narudžbine
+            </a>
+            <a *ngIf="ulogovan" mat-list-item routerLink="/omiljena-hrana" (click)="sidenav.close()">
+                <mat-icon>fastfood</mat-icon>
+                Omiljena hrana
+            </a>
+            <a *ngIf="ulogovan" mat-list-item routerLink="/omiljeni-restorani" (click)="sidenav.close()">
+                <mat-icon>restaurant</mat-icon>
+                Omiljeni restorani
+            </a>
+            <a *ngIf="ulogovan" mat-list-item routerLink="/adrese" (click)="sidenav.close()">
+                <mat-icon>location_on</mat-icon>
+                Adrese
+            </a>
+            <a *ngIf="ulogovan" mat-list-item routerLink="/kartice" (click)="sidenav.close()">
+                <mat-icon>credit_card</mat-icon>
+                Kartice
+            </a>
+            <a *ngIf="ulogovan" mat-list-item routerLink="/utisci" (click)="sidenav.close()">
+                <mat-icon>star_outline</mat-icon>
+                Utisci
+            </a>
+            <a *ngIf="ulogovan" mat-list-item routerLink="/" (click)="sidenav.close(); odjaviSe()">
+                <mat-icon>exit_to_app</mat-icon>
+                Odjavite se
+            </a>
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content fxLayout="column">
         <mat-toolbar color="primary">
             <div fxFlex="100" fxHide.gt-sm>
                 <div fxFlex fxFlexLayout="center">
-                    <a fxLayoutAlign="center center"routerLink="/"matTooltip="Početna stranica"><img src="../assets/slike/logo.png" alt="logo"></a>
+                    <a fxLayoutAlign="center center"routerLink="/"matTooltip="Početna stranica - pretraga hrane"><img src="../assets/slike/logo.png" alt="logo"></a>
                 </div>
                 <button  mat-icon-button (click)="sidenav.toggle()">
                     <mat-icon>menu</mat-icon>
@@ -28,8 +60,39 @@
             
             
             <div class="logo" fxHide.lt-md>
-                <a routerLink="/"matTooltip="Početna stranica"><img src="../assets/slike/logo.png" alt="logo"></a>
+                <a routerLink="/"matTooltip="Početna stranica - pretraga hrane"><img src="../assets/slike/logo.png" alt="logo"></a>
             </div>
+            <div id="meni" fxHide.lt-md>
+                <button *ngIf="ulogovan" mat-button routerLink="/profil">
+                    <mat-icon>person_outline</mat-icon>
+                    {{prijavljenKorisnikIme}}    
+                </button>
+                <button *ngIf="ulogovan" mat-button routerLink="/narudzbine">
+                    <mat-icon>list</mat-icon>
+                    Narudžbine   
+                </button>
+                <button *ngIf="ulogovan" mat-button routerLink="/omiljena-hrana">
+                    <mat-icon>fastfood</mat-icon>
+                    Omiljena hrana   
+                </button>
+                <button *ngIf="ulogovan" mat-button routerLink="/omiljeni-restorani">
+                    <mat-icon>restaurant</mat-icon>
+                    Omiljeni restorani   
+                </button>
+                <button *ngIf="ulogovan" mat-button routerLink="/adrese">
+                    <mat-icon>location_on</mat-icon>
+                    Adrese  
+                </button>
+                <button *ngIf="ulogovan" mat-button routerLink="/kartice">
+                    <mat-icon>credit_card</mat-icon>
+                    Kartice  
+                </button>
+                <button *ngIf="ulogovan" mat-button routerLink="/utisci">
+                    <mat-icon>star_outline</mat-icon>
+                    Utisci  
+                </button>
+            </div>
+
             <div class="prijava-registracija" fxFlex fxLayoutAlign="end" fxLayoutGap="30px" fxHide.lt-md>
                 <button *ngIf="!ulogovan" mat-button color="primary"><a routerLink="/prijava">Prijavite se</a></button>
                 <button *ngIf="!ulogovan" mat-raised-button color="warn"><a routerLink="/registracija">Registrujte se</a></button>

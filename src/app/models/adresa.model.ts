@@ -1,6 +1,6 @@
 export interface Adresa{
     grad: string;
-    opstina: string;
+    region: string;
     ulica: string;
     broj: string;
     brojStana?: string;

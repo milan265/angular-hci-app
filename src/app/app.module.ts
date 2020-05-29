@@ -18,6 +18,13 @@ import { PocetnaComponent } from './components/pocetna/pocetna.component';
 import { PrijavaComponent } from './components/auth/prijava/prijava.component';
 import { RegistracijaComponent } from './components/auth/registracija/registracija.component';
 import { Page404Component } from './components/page404/page404.component';
+import { ProfilComponent } from './components/profil/profil.component';
+import { OmiljenaHranaComponent } from './components/omiljena-hrana/omiljena-hrana.component';
+import { NarudzbineComponent } from './components/narudzbine/narudzbine.component';
+import { OmiljeniRestoraniComponent } from './components/omiljeni-restorani/omiljeni-restorani.component';
+import { AdreseComponent } from './components/adrese/adrese.component';
+import { UtisciComponent } from './components/utisci/utisci.component';
+import { KarticeComponent } from './components/kartice/kartice.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +32,14 @@ import { Page404Component } from './components/page404/page404.component';
     PocetnaComponent,
     RegistracijaComponent,
     PrijavaComponent,
-    Page404Component
+    Page404Component,
+    ProfilComponent,
+    OmiljenaHranaComponent,
+    NarudzbineComponent,
+    OmiljeniRestoraniComponent,
+    AdreseComponent,
+    UtisciComponent,
+    KarticeComponent
   ],
   imports: [
     BrowserModule,
