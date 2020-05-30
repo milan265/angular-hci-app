@@ -29,7 +29,7 @@
         </mat-form-field>
         <mat-form-field>
             <mat-label>Grad</mat-label>
-            <mat-select [(value)]="izabranGrad" (selectionChange)="podesiRegione()" required>
+            <mat-select ngModel name="grad" [(value)]="izabranGrad" (selectionChange)="podesiRegione()" required>
                 <mat-option *ngFor="let grad of gradovi" [value]="grad">
                            {{grad}}
                 </mat-option>
@@ -37,7 +37,7 @@
         </mat-form-field>
         <mat-form-field>
             <mat-label>Region</mat-label>
-            <mat-select required>
+            <mat-select ngModel name="region" required>
                 <mat-option *ngFor="let region of regioni" [value]="region">
                            {{region}}
                 </mat-option>
@@ -58,7 +58,7 @@
         </div>
         <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Registruj se</button>
         <div *ngIf="greska" fxLayout="column" fxLayoutAlign="center center">
-            <mat-label> {{greskaPoruka}}</mat-label>
+            <mat-label color="primary"> {{greskaPoruka}}</mat-label>
             <a routerLink="/prijava">Prijavite se</a>
         </div>
         <a routerLink="/uslovi-koriscenja">Uslovi korišćenja</a>

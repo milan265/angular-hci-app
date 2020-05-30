@@ -14,7 +14,7 @@
             <mat-error *ngIf="lozinka.hasError('required')">Polje mora biti popunjeno</mat-error>
         </mat-form-field>
         <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Prijavi se</button>
-        <div *ngIf="greska" fxLayout="column" fxLayoutAlign="center center">
+        <div color="warn"*ngIf="greska" fxLayout="column" fxLayoutAlign="center center">
             <mat-label> {{greskaPoruka}}</mat-label>
             <a routerLink="/registracija">Registrujte se</a>
         </div>

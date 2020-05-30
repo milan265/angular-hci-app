@@ -12,6 +12,7 @@ import { RestoranService } from './services/restoran.service';
 import { ObrokService } from './services/obrok.service';
 import { NarudzbinaService } from './services/narudzbina.service';
 import { GradoviService } from './services/gradovi.service';
+import { MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { PocetnaComponent } from './components/pocetna/pocetna.component';
@@ -25,6 +26,7 @@ import { OmiljeniRestoraniComponent } from './components/omiljeni-restorani/omil
 import { AdreseComponent } from './components/adrese/adrese.component';
 import { UtisciComponent } from './components/utisci/utisci.component';
 import { KarticeComponent } from './components/kartice/kartice.component';
+import { UsloviKoriscenjaComponent } from './components/uslovi-koriscenja/uslovi-koriscenja.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { KarticeComponent } from './components/kartice/kartice.component';
     OmiljeniRestoraniComponent,
     AdreseComponent,
     UtisciComponent,
-    KarticeComponent
+    KarticeComponent,
+    UsloviKoriscenjaComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,8 @@ import { KarticeComponent } from './components/kartice/kartice.component';
     RestoranService,
     ObrokService,
     NarudzbinaService,
-    GradoviService
+    GradoviService,
+    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2000}}
   ],
   bootstrap: [AppComponent]
 })

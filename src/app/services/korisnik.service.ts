@@ -13,7 +13,7 @@ export class KorisnikService {
             ime: "Milan",
             prezime: "Savić",
             korisnickoIme: "milansavic",
-            email:"milansavic@mail.com",
+            email:"milan.savic@mail.rs",
             lozinka:"milan123",
             telefon:"0661242659",
             datumRegistrovanja: new Date(2020,5,28),
@@ -41,6 +41,10 @@ export class KorisnikService {
     isLozinkaDobra(email: string, lozinka: string): boolean{
         return this.korisnikPodaci.find(korisnik => 
           korisnik.email == email && korisnik.lozinka == lozinka) != undefined;
+    }
+
+    getImeByEmail(email: string){
+        return this.korisnikPodaci.find(korisnik => korisnik.email == email).ime;
     }
  
     registrujKorisnika(ime:string, prezime:string, email:string, lozinka:string, telefon:string, grad:string, region:string, ulica:string, broj:string, brojStana:string):void{

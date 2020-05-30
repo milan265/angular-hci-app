@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
+import { KorisnikService } from 'src/app/services/korisnik.service';
+import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
+import { AppComponent } from 'src/app/app.component';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-prijava',
@@ -16,14 +21,30 @@ export class PrijavaComponent implements OnInit {
   greska:boolean = false;
   greskaPoruka:string = "";
 
-  constructor(private titleService: Title) { }
+  constructor(private titleService: Title, private korisnikService: KorisnikService,
+            private cookieService: CookieService, private router:Router, private appComponent: AppComponent,
+            private snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.titleService.setTitle("Prijava");
   }
 
   onSubmit(form: NgForm){
-    console.log("onsubmit");
+    let email: string = form.value.email;
+    let lozinka: string = form.value.lozinka;
+    if(!this.korisnikService.isLozinkaDobra(email,lozinka)){
+      this.greska = true;
+      this.greskaPoruka = "Korisnik sa unetim podacima ne postoji";
+      return
+    }
+    this.greska = false;
+    this.appComponent.ulogovan = true;
+    this.appComponent.prijavljenKorisnikIme = this.korisnikService.getImeByEmail(email);
+    this.cookieService.set("ulogovan","true");
+    this.cookieService.set("email",email);
+    this.cookieService.set("prijavljenKorisnikIme",this.korisnikService.getImeByEmail(email));
+    this.router.navigate(['']);
+    this.snackBar.open("Prijavljeni ste");
   }
 
   sakrijLozinku(){
