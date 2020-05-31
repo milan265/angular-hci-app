@@ -1,3 +1,56 @@
 <section class="mainHeight">
-
+    <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" #f1="ngForm" (ngSubmit)="onSubmitPodaci(f1)">
+        <mat-card-title>Vaši lični podaci</mat-card-title>
+        <mat-card>
+            <mat-form-field>
+                <input type="text" matInput placeholder="Ime" ngModel name="ime" #ime="ngModel" [(ngModel)]="korisnikIme" required>
+                <mat-error *ngIf="ime.hasError('required')">Polje mora biti popunjeno</mat-error>
+            </mat-form-field>
+        </mat-card>
+        <mat-card>
+            <mat-form-field>
+                <input type="text" matInput placeholder="Prezime" ngModel name="prezime" #prezime="ngModel"  [(ngModel)]="korisnikPrezime" required>
+                <mat-error *ngIf="prezime.hasError('required')">Polje mora biti popunjeno</mat-error>
+            </mat-form-field>
+        </mat-card>
+        <mat-card>
+            <mat-card-subtitle>E-mail</mat-card-subtitle>
+            <span>{{email}}</span>
+        </mat-card>
+        <mat-card>
+            <mat-form-field>
+                <mat-label>Broj telefona</mat-label>
+                <input type="number" matInput placeholder="011222333" ngModel name="brojTelefona" #brojTelefona="ngModel"  [(ngModel)]="korisnikbrojTelefona" required>
+                <mat-error *ngIf="brojTelefona.hasError('required')">Polje mora biti popunjeno</mat-error>
+            </mat-form-field>
+        </mat-card>  
+        <button type="submit" mat-raised-button color="primary" [disabled]="f1.invalid">Sačuvaj izmene</button>  
+    </form>
+    <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" #f2="ngForm" (ngSubmit)="onSubmitLozinka(f2)">
+        <mat-card-title>Promena lozinke</mat-card-title>
+        <mat-card>
+            <mat-form-field>
+                <input [type]="tipLozinkeTrenutna" matInput placeholder="Trenutna lozinka" ngModel name="trenutnaLozinka" #lozinka="ngModel" required >
+                <button type="button" matSuffix mat-icon-button (click)="sakrijLozinkuTrenutnu()">
+                    <mat-icon>{{vidljivostTrenutna}}</mat-icon>
+                </button>
+                <mat-error *ngIf="lozinka.hasError('required')">Polje mora biti popunjeno</mat-error>
+            </mat-form-field>
+        </mat-card>
+        <mat-card>
+            <mat-form-field hintLabel="Lozinka mora imati više od 8 karaktera">
+                <input [type]="tipLozinkeNova" matInput placeholder="Nova lozinka" ngModel name="novaLozinka" required minlength="8" #lozinkaInput="ngModel">
+                <button type="button" matSuffix mat-icon-button (click)="sakrijLozinkuNovu()">
+                    <mat-icon>{{vidljivostNova}}</mat-icon>
+                </button>
+                <mat-hint align="end">{{lozinkaInput.value?.length}}/8</mat-hint>
+            </mat-form-field>
+        </mat-card>
+        <button type="submit" mat-raised-button color="primary" [disabled]="f2.invalid">Sačuvaj izmene</button>
+        <div *ngIf="greska" fxLayout="column" fxLayoutAlign="center center">
+            <mat-label class="greskaPoruka"> {{greskaPoruka}}</mat-label>
+        </div>
+    </form>
+        
+    
 </section>

@@ -7,7 +7,6 @@ export interface Korisnik{
     id: number;
     ime: string;
     prezime: string;
-    korisnickoIme: string;
     email: string;
     lozinka: string;
     telefon: string;

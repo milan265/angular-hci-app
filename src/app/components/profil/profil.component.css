@@ -1,0 +1,29 @@
+section{
+    margin-bottom: 50px;
+}
+form{
+    margin: 100px auto;
+    padding: 20px;
+    width: 50vw;
+    border: 1px solid darkgrey;
+    border-radius: 5px;
+    background-color: whitesmoke;
+}
+mat-form-field{
+    width: 90%;
+}
+mat-card{
+    width: 90%;
+    background-color: #fefefe;
+}
+mat-card-subtitle{
+    margin-bottom: 3vh;
+    font-size: 0.75em;
+}
+
+/*Uklanja strelice kod input type number*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

@@ -11,6 +11,9 @@ html, body{
     min-height: 75vh;
     /*background-color: white;*/
 }
+.greskaPoruka{
+    color:#f44336;
+}
 a{
     text-decoration: none;
 }
