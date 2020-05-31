@@ -5,7 +5,8 @@ import { KorisnikService } from 'src/app/services/korisnik.service';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 import { AppComponent } from 'src/app/app.component';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar, MatDialog } from '@angular/material';
+import { ZaboravljenaLozinkaComponent } from './zaboravljena-lozinka/zaboravljena-lozinka.component';
 
 @Component({
   selector: 'app-prijava',
@@ -23,7 +24,7 @@ export class PrijavaComponent implements OnInit {
 
   constructor(private titleService: Title, private korisnikService: KorisnikService,
             private cookieService: CookieService, private router:Router, private appComponent: AppComponent,
-            private snackBar: MatSnackBar) { }
+            private snackBar: MatSnackBar, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.titleService.setTitle("Prijava");
@@ -59,5 +60,8 @@ export class PrijavaComponent implements OnInit {
     }
   }
 
+  zaboravljenaLozinka(){
+    this.dialog.open(ZaboravljenaLozinkaComponent);
+  }
 
 }

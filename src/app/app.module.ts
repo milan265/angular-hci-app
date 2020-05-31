@@ -27,6 +27,7 @@ import { AdreseComponent } from './components/adrese/adrese.component';
 import { UtisciComponent } from './components/utisci/utisci.component';
 import { KarticeComponent } from './components/kartice/kartice.component';
 import { UsloviKoriscenjaComponent } from './components/uslovi-koriscenja/uslovi-koriscenja.component';
+import { ZaboravljenaLozinkaComponent } from './components/auth/prijava/zaboravljena-lozinka/zaboravljena-lozinka.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { UsloviKoriscenjaComponent } from './components/uslovi-koriscenja/uslovi
     AdreseComponent,
     UtisciComponent,
     KarticeComponent,
-    UsloviKoriscenjaComponent
+    UsloviKoriscenjaComponent,
+    ZaboravljenaLozinkaComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +63,7 @@ import { UsloviKoriscenjaComponent } from './components/uslovi-koriscenja/uslovi
     GradoviService,
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2000}}
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ZaboravljenaLozinkaComponent]
 })
 export class AppModule { }

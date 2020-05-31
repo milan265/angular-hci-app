@@ -9,6 +9,7 @@ html, body{
 
 .mainHeight{
     min-height: 75vh;
+    /*background-color: white;*/
 }
 a{
     text-decoration: none;
