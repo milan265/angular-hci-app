@@ -57,9 +57,9 @@
             </mat-form-field>
         </div>
         <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Registruj se</button>
-        <div *ngIf="greska" fxLayout="column" fxLayoutAlign="center center">
-            <mat-label class="greskaPoruka"> {{greskaPoruka}}</mat-label>
-            <a routerLink="/prijava">Prijavite se</a>
+        <div *ngIf="greska" class="greskaPoruka" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="3px">
+            <mat-label> {{greskaPoruka}}</mat-label>
+            <button mat-raised-button color="warn" routerLink="/prijava">Prijavite se</button>
         </div>
         <a routerLink="/uslovi-koriscenja">Uslovi korišćenja</a>
         <mat-checkbox color="primary" ngModel name="usloviKoriscenja" required>Prihvatam uslove korišćenja</mat-checkbox>

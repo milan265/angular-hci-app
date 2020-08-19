@@ -50,3 +50,14 @@ img{
     padding-left: 20px;
     padding-right: 20px;
 }
+
+.cookie{
+    position: fixed;
+    background-color: darkslategrey;
+    color: white;
+    bottom: 0px;
+    padding-top: 50px;
+    padding-bottom: 75px;
+    font-size: 16px;
+    z-index: 999;
+}

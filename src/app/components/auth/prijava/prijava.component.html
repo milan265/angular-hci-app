@@ -16,9 +16,9 @@
         </mat-form-field>
         <a mat-button color="primary" (click)="zaboravljenaLozinka()">Zaboravili ste lozinku?</a>
         <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Prijavite se</button>
-        <div *ngIf="greska" fxLayout="column" fxLayoutAlign="center center">
-            <mat-label class="greskaPoruka"> {{greskaPoruka}}</mat-label>
-            <a routerLink="/registracija">Registrujte se</a>
+        <div *ngIf="greska" class="greskaPoruka" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="3px">
+            <mat-label> {{greskaPoruka}}</mat-label>
+            <button mat-raised-button color="warn" routerLink="/registracija">Registrujte se</button>
         </div>
     </form>
     <div fxHide.lt-md fxFlex="40"></div>

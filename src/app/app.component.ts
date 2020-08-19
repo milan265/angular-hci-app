@@ -11,6 +11,7 @@ import { MatSnackBar } from '@angular/material';
 export class AppComponent implements OnInit {
   greska404: boolean = false;
   ulogovan: boolean = false;
+  kolacici: boolean = false;
   ruteNijePrijavljen: Array<string> = ["/","/registracija","/prijava","/uslovi-koriscenja"];  
   rutePrijavljen: Array<string> = ["/","/profil","/narudzbine","/omiljena-hrana","/omiljeni-restorani",
                                   "/adrese","/kartice","/utisci","/uslovi-koriscenja"];
@@ -23,6 +24,10 @@ export class AppComponent implements OnInit {
 
   async ngOnInit(){
     //let sveRute: Array<string> = this.ruteNijePrijavljen.concat(this.rutePrijavljen);
+    if(this.cookieService.check("kolacici")){
+      this.kolacici = true;
+    }
+
     if(this.cookieService.check("ulogovan")){
       this.ulogovan = this.cookieService.get("ulogovan")=="true"?true:false;
       this.prijavljenKorisnikIme = this.cookieService.get("prijavljenKorisnikIme"); 
@@ -51,5 +56,10 @@ export class AppComponent implements OnInit {
     this.cookieService.set("email","");
     this.cookieService.set("prijavljenKorisnikIme","");
     this.snackBar.open("Odjavili ste se");
+  }
+
+  prihvatiKolacice():void{
+    this.kolacici = true;
+    this.cookieService.set("kolacici","true");
   }
 }

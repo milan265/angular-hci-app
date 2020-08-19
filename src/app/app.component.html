@@ -102,6 +102,11 @@
                
         <router-outlet></router-outlet>
 
+        <mat-toolbar *ngIf="!kolacici" class="cookie" fxLayout="column" fxLayoutAlign="center center">
+                <p>Koristimo alate kao što su kolačići u analitičke i marketinške svrhe.</p>
+                <button color="warn" mat-raised-button (click)="prihvatiKolacice()">Prihvatam</button>
+        </mat-toolbar>
+        
         <mat-toolbar color="primary" fxLayout="column">
             <div fxLayoutAlign="center center">
                 <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>

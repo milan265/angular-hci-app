@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { Restoran } from 'src/app/models/restoran.model';
 
 @Component({
   selector: 'app-pocetna',
@@ -9,7 +10,8 @@ import { Title } from '@angular/platform-browser';
 export class PocetnaComponent implements OnInit {
 
   slika:string = "url('../../../assets/slike/pocetna.jpg')";
-
+  restorani: Array<Restoran> = [];
+  
   constructor(private titleService: Title) { }
 
   ngOnInit() {
@@ -17,5 +19,9 @@ export class PocetnaComponent implements OnInit {
   }
   getSlika(){
     return this.slika;
+  }
+
+  prikaziRestoran():void{
+    console.log("restoran");
   }
 }

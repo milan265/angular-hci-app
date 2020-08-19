@@ -1,12 +1,16 @@
 import { Adresa } from './adresa.model';
-import { Obrok } from './obrok.model';
+import { Utisak } from './utisak.model';
 
 export interface Restoran{
     id: number;
     naziv: string;
     adrese: Array<Adresa>;
-    opis: string;
+    opis?: string;
     logo: string;
-    obroci: Array<Obrok>;
-    ocena: number;
+    cover: string;
+    obroci: Array<number>;
+    ocena?: number;
+    utisci?: Array<Utisak>;
+    kategorije: Array<string>;
+    tagovi: Array<string>
 }

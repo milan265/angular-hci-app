@@ -12,6 +12,7 @@ import { RestoranService } from './services/restoran.service';
 import { ObrokService } from './services/obrok.service';
 import { NarudzbinaService } from './services/narudzbina.service';
 import { GradoviService } from './services/gradovi.service';
+import { DodatakObrokuService } from './services/dodatakObroku.service';
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -61,6 +62,7 @@ import { ZaboravljenaLozinkaComponent } from './components/auth/prijava/zaboravl
     ObrokService,
     NarudzbinaService,
     GradoviService,
+    DodatakObrokuService,
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2000}}
   ],
   bootstrap: [AppComponent],
