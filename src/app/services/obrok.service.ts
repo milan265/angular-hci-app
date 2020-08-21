@@ -6,7 +6,7 @@ import { Obrok } from '../models/obrok.model';
 })
 
 export class ObrokService {
-    static obrokPodaci: Array<Obrok> = [
+    private obrokPodaci: Array<Obrok> = [
         //grill 51
         {
             id: 1,
@@ -1151,5 +1151,32 @@ export class ObrokService {
     ];
 
     constructor() {}
-    
+
+    getObrokById(id: number):Obrok{
+        return this.obrokPodaci.find(obrok => obrok.id == id);
+    }
+
+    getNazivById(id: number):string{
+        return this.obrokPodaci.find(obrok => obrok.id == id).naziv;
+    } 
+
+    getOpisById(id: number):string{
+        return this.obrokPodaci.find(obrok => obrok.id == id).opis;
+    }
+
+    getKategorijaById(id: number):string{
+        return this.obrokPodaci.find(obrok => obrok.id == id).kategorija;
+    }
+
+    getTagById(id: number):Array<string>{
+        return this.obrokPodaci.find(obrok => obrok.id == id).tag;
+    } 
+
+    getCenaById(id: number):number{
+        return this.obrokPodaci.find(obrok => obrok.id == id).cena;
+    } 
+
+    getDodaciById(id: number):Array<number>{
+        return this.obrokPodaci.find(obrok => obrok.id == id).dodaci;
+    } 
 }

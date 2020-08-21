@@ -6,24 +6,50 @@
         </div>
     </div>
     
-    <div class="restorani-pocetna" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="50px">
-        <div fxaLayout="row" fxLayoutGap="50px">
-            <mat-card fxFlex="250px"  *ngFor="let restoran of restorani; let i=index" (click)="prikaziRestoran();">
+    <div fxLayoutAlign="center center">
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </form>
+    </div>
+    
+    <div fxHide.lt-md class="restorani-pocetna" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <div fxLayout="column" fxLayoutGap="50px">
+          <h1>Najbolje ocenjeni restorani</h1>
+          <div *ngFor="let red of brojRedova" fxLayout="row" fxLayoutGap="50px">
+            <mat-card fxFlex="250px"  *ngFor="let kolona of brojKolona; let i=index" (click)="prikaziRestoran(restorani[brKolona*red+kolona].id);">
+              <img mat-card-image src="{{restorani[brKolona*red+kolona].cover}}" alt="{{restorani[brKolona*red+kolona].naziv}}">
                 <mat-card-content>
-                  <p>
-                    The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                    bred for hunting.
+                  <p class="naziv-restorana">
+                    {{restorani[brKolona*red+kolona].naziv}} {{restorani[brKolona*red+kolona].ocena}}
                   </p>
                 </mat-card-content>
-                <mat-card-actions>
-                  <button mat-button>LIKE</button>
-                  <button mat-button>SHARE</button>
-                </mat-card-actions>
             </mat-card>    
+          </div>
         </div>
-     
     </div>
+
+    <div fxHide.gt-sm class="restorani-pocetna" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+      <div fxLayout="column" fxLayoutGap="50px">
+        <h1>Najbolje ocenjeni restorani</h1>
+        <div *ngFor="let red of brojRedovaManji" fxLayout="row" fxLayoutGap="50px">
+          <mat-card fxFlex="350px"  *ngFor="let kolona of brojKolonaManji; let i=index" (click)="prikaziRestoran(restoraniManji[brKolonaManji*red+kolona].id);">
+            <img mat-card-image src="{{restoraniManji[brKolonaManji*red+kolona].cover}}" alt="{{restoraniManji[brKolonaManji*red+kolona].naziv}}">
+              <mat-card-content>
+                <p class="naziv-restorana">
+                  {{restoraniManji[brKolonaManji*red+kolona].naziv}} {{restoraniManji[brKolonaManji*red+kolona].ocena}}
+                </p>
+              </mat-card-content>
+          </mat-card>    
+        </div>
+      </div>
+  </div>
     
 </section>
 

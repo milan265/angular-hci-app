@@ -7,7 +7,7 @@ import { DodatakObroku } from '../models/dodatakObroku.model';
 
 export class DodatakObrokuService {
 
-    static dodatakObrokuPodaci: Array<DodatakObroku> =[
+    private dodatakObrokuPodaci: Array<DodatakObroku> =[
         {
             id: 1,
             naziv: "Majonez",
@@ -283,4 +283,28 @@ export class DodatakObrokuService {
     ];
 
     constructor() {}
+
+    getDodatakObrokuById(id: number):DodatakObroku{
+        return this.dodatakObrokuPodaci.find(dodatak => dodatak.id == id);
+    }
+
+    getNazivById(id: number):string{
+        return this.dodatakObrokuPodaci.find(dodatak => dodatak.id == id).naziv;
+    }
+
+    getNaslovDodatkaById(id: number):string{
+        return this.dodatakObrokuPodaci.find(dodatak => dodatak.id == id).naslovDodatka;
+    }
+
+    getCenaById(id: number):number{
+        return this.dodatakObrokuPodaci.find(dodatak => dodatak.id == id).cena;
+    }
+
+    isDodatakById(id: number):boolean{
+        return this.dodatakObrokuPodaci.find(dodatak => dodatak.id == id).dodatak;
+    }
+
+    isVisestrukiIzborById(id: number):boolean{
+        return this.dodatakObrokuPodaci.find(dodatak => dodatak.id == id).visestrukiIzbor;
+    }
 }

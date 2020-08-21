@@ -11,7 +11,9 @@ import { MatButtonModule,
         MatTooltipModule,
         MatSnackBarModule,
         MatDialogModule,
-        MatCardModule} from '@angular/material'
+        MatCardModule,
+        MatAutocompleteModule} from '@angular/material'
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule ({
     imports:[
@@ -24,7 +26,9 @@ import { MatButtonModule,
         MatInputModule,
         MatSnackBarModule,
         MatDialogModule,
-        MatCardModule
+        MatCardModule,
+        MatAutocompleteModule,
+        ReactiveFormsModule
     ],
     exports:[
         MatButtonModule,
@@ -39,7 +43,9 @@ import { MatButtonModule,
         MatTooltipModule,
         MatSnackBarModule,
         MatDialogModule,
-        MatCardModule
+        MatCardModule,
+        MatAutocompleteModule,
+        ReactiveFormsModule
     ]
 })
 

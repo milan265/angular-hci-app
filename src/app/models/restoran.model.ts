@@ -12,5 +12,6 @@ export interface Restoran{
     ocena?: number;
     utisci?: Array<Utisak>;
     kategorije: Array<string>;
-    tagovi: Array<string>
+    tagovi: Array<string>;
+    minCenaNarudzbine: number;
 }

@@ -12,6 +12,7 @@ import { AdreseComponent } from './components/adrese/adrese.component';
 import { UtisciComponent } from './components/utisci/utisci.component';
 import { KarticeComponent } from './components/kartice/kartice.component';
 import { UsloviKoriscenjaComponent } from './components/uslovi-koriscenja/uslovi-koriscenja.component';
+import { PrikazRestoranaComponent } from './components/prikaz-restorana/prikaz-restorana.component';
 
 const rute: Routes = [
     {path:'', component:PocetnaComponent},
@@ -25,7 +26,8 @@ const rute: Routes = [
     {path:'utisci', component: UtisciComponent},
     {path:'kartice', component: KarticeComponent},
     {path: '404', component: Page404Component},
-    {path: 'uslovi-koriscenja', component: UsloviKoriscenjaComponent}
+    {path: 'uslovi-koriscenja', component: UsloviKoriscenjaComponent},
+    {path: 'prikaz-restorana', component: PrikazRestoranaComponent}
 ];
 
 @NgModule({

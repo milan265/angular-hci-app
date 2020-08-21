@@ -17,9 +17,24 @@
 }
 
 .restorani-pocetna{
-    margin-bottom: 50px;
+    padding: 50px;
+    background-color: #f7f7f7;
 }
 
 mat-card{
     cursor: pointer;
 }
+
+.naziv-restorana{
+    font-weight: bold;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }

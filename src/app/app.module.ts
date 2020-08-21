@@ -29,6 +29,7 @@ import { UtisciComponent } from './components/utisci/utisci.component';
 import { KarticeComponent } from './components/kartice/kartice.component';
 import { UsloviKoriscenjaComponent } from './components/uslovi-koriscenja/uslovi-koriscenja.component';
 import { ZaboravljenaLozinkaComponent } from './components/auth/prijava/zaboravljena-lozinka/zaboravljena-lozinka.component';
+import { PrikazRestoranaComponent } from './components/prikaz-restorana/prikaz-restorana.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ZaboravljenaLozinkaComponent } from './components/auth/prijava/zaboravl
     UtisciComponent,
     KarticeComponent,
     UsloviKoriscenjaComponent,
-    ZaboravljenaLozinkaComponent
+    ZaboravljenaLozinkaComponent,
+    PrikazRestoranaComponent
   ],
   imports: [
     BrowserModule,
