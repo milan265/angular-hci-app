@@ -1,6 +1,6 @@
 <section class="mainHeight" fxLayout="column" fxLayoutGap="50px">
     <div>
-        <div class="background-image" fxFlex="100" fxLayout="column" fxLayoutAlign="center center" [ngStyle]="{'background-image': getSlika()}">
+        <div class="background-image" fxLayout="column" fxLayoutAlign="center center" [ngStyle]="{'background-image': getSlika()}">
             <h1>Dostava hrane</h1>
             <p>Poručite svoju omiljenu hranu brzo i lako</p>
         </div>
@@ -23,11 +23,14 @@
         <div fxLayout="column" fxLayoutGap="50px">
           <h1>Najbolje ocenjeni restorani</h1>
           <div *ngFor="let red of brojRedova" fxLayout="row" fxLayoutGap="50px">
-            <mat-card fxFlex="250px"  *ngFor="let kolona of brojKolona; let i=index" (click)="prikaziRestoran(restorani[brKolona*red+kolona].id);">
+            <mat-card fxFlex="250px"  *ngFor="let kolona of brojKolona" (click)="prikaziRestoran(restorani[brKolona*red+kolona].id);">
               <img mat-card-image src="{{restorani[brKolona*red+kolona].cover}}" alt="{{restorani[brKolona*red+kolona].naziv}}">
                 <mat-card-content>
                   <p class="naziv-restorana">
-                    {{restorani[brKolona*red+kolona].naziv}} {{restorani[brKolona*red+kolona].ocena}}
+                    {{restorani[brKolona*red+kolona].naziv}}
+                  </p>
+                  <p>
+                    <bar-rating [rate]="restorani[brKolona*red+kolona].ocena" [showText]="true" [readOnly]="true" [max]="5" theme="fontawesome-o"></bar-rating>
                   </p>
                 </mat-card-content>
             </mat-card>    

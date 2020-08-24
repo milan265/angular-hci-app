@@ -20,6 +20,7 @@ export class AppComponent implements OnInit {
 
   constructor(private cookieService: CookieService, private router: Router, private snackBar:MatSnackBar){}
 
+
   //cookie se koristi kad se stranica reload-uje
 
   async ngOnInit(){
@@ -62,4 +63,6 @@ export class AppComponent implements OnInit {
     this.kolacici = true;
     this.cookieService.set("kolacici","true");
   }
+
+  
 }

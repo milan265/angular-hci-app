@@ -1,8 +1,7 @@
 .background-image{
-    height: 200px;
-    /*background-image: url("../../../assets/slike/slike/4.jpg");
-    background-position: 40% 40%;*/
-    background-position: 50% 90%;
+    height: 250px;
+    background-size: 100% 200%;
+    background-position: 50% 85%;
 }
 .background-image > h1, .background-image > p{
     color: white;

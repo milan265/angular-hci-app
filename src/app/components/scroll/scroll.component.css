@@ -1,0 +1,14 @@
+.scroll-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    opacity: 0;
+    transition: all .2s ease-in-out;
+}
+
+.show-scroll {
+    opacity: 1;
+}
+.scroll-button {
+    cursor: pointer;
+  }

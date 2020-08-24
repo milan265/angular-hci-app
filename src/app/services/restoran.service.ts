@@ -15,11 +15,11 @@ export class RestoranService {
                 region: "Zvezdara",
                 ulica: "Vojislava Ilića",
                 broj: "51a"}],
-            opis: "",
+            opis: "Najbolji roštilj u gradu!",
             logo: "../../assets/slike/restorani/grill51/logo.png",
             cover: "../../assets/slike/restorani/grill51/cover.png",
             obroci:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27],
-            kategorije:["roštilj","piletina","pohovano","sendviči","pomfrit","palačinke","piće"],
+            kategorije:["Roštilj","Piletina","Pohovano","Sendviči","Pomfrit","Palačinke","Piće"],
             tagovi:["rostilj","piletina","pohovano","sendvic","sendvici","pomfrit","slatke palacinke","palacinke","pice"],
             ocena: 4.3,
             minCenaNarudzbine: 600  
@@ -32,11 +32,11 @@ export class RestoranService {
                 region: "Vračar",
                 ulica: "Bulevar kralja Aleksandra",
                 broj: "144"}],
-            opis: "",
+            opis: "Najbolji roštilj u gradu!",
             logo: "../../assets/slike/restorani/pile&prase/logo.png",
             cover: "../../assets/slike/restorani/pile&prase/cover.png",
             obroci:[28,29,30,31,32,33,34,35,36,37,38,39],
-            kategorije:["roštilj","sendviči","slane palačinke","slatke palačinke","ostalo","piće"],
+            kategorije:["Roštilj","Palačinke","Ostalo","Piće"],
             tagovi:["rostilj","sendvici","sendvic","slane palacinke","palacinke","slatke palacinke","pomfrit","pice"],
             ocena: 4.6,
             minCenaNarudzbine: 800 
@@ -53,7 +53,7 @@ export class RestoranService {
             logo: "../../assets/slike/restorani/walter/logo.png",
             cover: "../../assets/slike/restorani/walter/cover.png",
             obroci:[40,41,42,43,44,45,46,47,48,49,50,51,52,53,54],
-            kategorije:["roštilj","salate","pomfrit","palačinke","deserti","piće"],
+            kategorije:["Roštilj","Salate","Pomfrit","Palačinke","Piće"],
             tagovi:["rostilj","salate","salata","pomfrit","palacinke","deserti","pice"],
             ocena: 4.4,
             minCenaNarudzbine: 800  
@@ -70,7 +70,7 @@ export class RestoranService {
             logo: "../../assets/slike/restorani/big-pizza/logo.png",
             cover: "../../assets/slike/restorani/big-pizza/cover.png",
             obroci:[55,56,57,58,59,60,61],
-            kategorije:["pica"],
+            kategorije:["Pica"],
             tagovi:["pica","pizza","italijanska"],
             ocena: 4.2,
             minCenaNarudzbine: 600  
@@ -87,7 +87,7 @@ export class RestoranService {
             logo: "../../assets/slike/restorani/napoli/logo.png",
             cover: "../../assets/slike/restorani/napoli/cover.png",
             obroci:[68,69,70,71],
-            kategorije:["pica"],
+            kategorije:["Pica"],
             tagovi:["pica","pizza","italijanska"],
             ocena: 4.0,
             minCenaNarudzbine: 600  
@@ -104,7 +104,7 @@ export class RestoranService {
             logo: "../../assets/slike/restorani/brooklyn-pizza/logo.png",
             cover: "../../assets/slike/restorani/brooklyn-pizza/cover.png",
             obroci:[62,63,64,65,66,67],
-            kategorije:["pica"],
+            kategorije:["Pica"],
             tagovi:["pica","pizza","italijanska"],
             ocena: 4.5,
             minCenaNarudzbine: 700  
@@ -121,7 +121,7 @@ export class RestoranService {
             logo: "../../assets/slike/restorani/kasper-le-mesko/logo.png",
             cover: "../../assets/slike/restorani/kasper-le-mesko/cover.png",
             obroci:[72,73,74,75],
-            kategorije:["pica","roštilj","sendviči","pohovano","palačinke"],
+            kategorije:["Pica"],
             tagovi:["pica","pizza","italijanska","rostilj","sendvici","pohovano","palacinke"],
             ocena: 4.0,
             minCenaNarudzbine: 600  
@@ -138,7 +138,7 @@ export class RestoranService {
             logo: "../../assets/slike/restorani/madness/logo.png",
             cover: "../../assets/slike/restorani/madness/cover.png",
             obroci:[76,77,78,79],
-            kategorije:["pica","roštilj","sendviči","slatke palačinke"],
+            kategorije:["Pica"],
             tagovi:["pica","pizza","italijanska","rostilj","sendvici","palacinke","slatke palacinke"],
             ocena: 4.0,
             minCenaNarudzbine: 500  
@@ -151,11 +151,11 @@ export class RestoranService {
                 region: "Vračar",
                 ulica: "Internacionalnih brigada",
                 broj: "20"}],
-            opis: "",
+            opis: "Restoran iz vašeg komšiluka!",
             logo: "../../assets/slike/restorani/intergalactic-diner/logo.png",
             cover: "../../assets/slike/restorani/intergalactic-diner/cover.png",
             obroci:[80,81,82,83,84],
-            kategorije:["burgeri"],
+            kategorije:["Burgeri junetina","Burgeri piletina", "Burger vegetarijanski"],
             tagovi:["burgeri"],
             ocena: 4.7,
             minCenaNarudzbine: 900  
@@ -172,7 +172,7 @@ export class RestoranService {
             logo: "../../assets/slike/restorani/mcdonalds/logo.png",
             cover: "../../assets/slike/restorani/mcdonalds/cover.png",
             obroci:[85,86,87,88,89,90,91,92,93,94,95,96,97,98],
-            kategorije:["mc-obrok","burgeri","pomfrit","šejkovi"],
+            kategorije:["Mc Obrok","Burgeri","Pomfrit","Šejkovi"],
             tagovi:["obrok","burgeri","pomfrit","sejkovi"],
             ocena: 4.1,
             minCenaNarudzbine: 600  
@@ -189,7 +189,7 @@ export class RestoranService {
             logo: "../../assets/slike/restorani/soya-sos/logo.png",
             cover: "../../assets/slike/restorani/soya-sos/cover.png",
             obroci:[111,112,113,114,115],
-            kategorije:["piletina","svinjetina","teletina","desert"],
+            kategorije:["Piletina","Svinjetina","Desert"],
             tagovi:["piletina","svinjetina","teletina","desert","kineska"],
             ocena: 3.9,
             minCenaNarudzbine: 800  
@@ -206,7 +206,7 @@ export class RestoranService {
             logo: "../../assets/slike/restorani/black-white/logo.png",
             cover: "../../assets/slike/restorani/black-white/cover.png",
             obroci:[104,105,106,107,108,109,110],
-            kategorije:["piletina","svinjetina","teletina","desert"],
+            kategorije:["Piletina","Svinjetina","Teletina","Desert"],
             tagovi:["piletina","svinjetina","teletina","desert","kineska"],
             ocena: 4.4,
             minCenaNarudzbine: 800  
@@ -223,7 +223,7 @@ export class RestoranService {
             logo: "../../assets/slike/restorani/giros-kod-bucka/logo.png",
             cover: "../../assets/slike/restorani/giros-kod-bucka/cover.png",
             obroci:[99,100,101,102,103],
-            kategorije:["giros"],
+            kategorije:["Giros"],
             tagovi:["giros"],
             ocena: 4.2,
             minCenaNarudzbine: 700  

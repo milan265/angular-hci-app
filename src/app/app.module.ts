@@ -5,6 +5,7 @@ import { RoutingModule } from './routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { FormsModule } from '@angular/forms';
+import { BarRatingModule } from 'ngx-bar-rating';
 
 import { CookieService } from 'ngx-cookie-service';
 import { KorisnikService } from './services/korisnik.service';
@@ -30,6 +31,8 @@ import { KarticeComponent } from './components/kartice/kartice.component';
 import { UsloviKoriscenjaComponent } from './components/uslovi-koriscenja/uslovi-koriscenja.component';
 import { ZaboravljenaLozinkaComponent } from './components/auth/prijava/zaboravljena-lozinka/zaboravljena-lozinka.component';
 import { PrikazRestoranaComponent } from './components/prikaz-restorana/prikaz-restorana.component';
+import { ScrollComponent } from './components/scroll/scroll.component';
+
 
 @NgModule({
   declarations: [
@@ -47,7 +50,8 @@ import { PrikazRestoranaComponent } from './components/prikaz-restorana/prikaz-r
     KarticeComponent,
     UsloviKoriscenjaComponent,
     ZaboravljenaLozinkaComponent,
-    PrikazRestoranaComponent
+    PrikazRestoranaComponent,
+    ScrollComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +59,8 @@ import { PrikazRestoranaComponent } from './components/prikaz-restorana/prikaz-r
     RoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    FormsModule
+    FormsModule,
+    BarRatingModule
   ],
   providers: [
     CookieService,

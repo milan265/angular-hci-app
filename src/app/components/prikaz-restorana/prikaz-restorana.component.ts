@@ -1,8 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { RestoranService } from 'src/app/services/restoran.service';
-import { Restoran } from 'src/app/models/restoran.model';
 import { CookieService } from 'ngx-cookie-service';
+import { RestoranService } from 'src/app/services/restoran.service';
+import { ObrokService } from 'src/app/services/obrok.service';
+
+import { Restoran } from 'src/app/models/restoran.model';
+import { Obrok } from 'src/app/models/obrok.model';
+import { ScrollToService } from 'src/app/services/scroll-to.service';
 
 @Component({
   selector: 'app-prikaz-restorana',
@@ -11,13 +15,37 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class PrikazRestoranaComponent implements OnInit {
 
-  constructor(private titleService: Title, private cookieService: CookieService, private restoranService:RestoranService) { }
+  restoranId: number;
+  restoran: Restoran;
+  obroci: Array<Obrok> = [];
+  kategorije: Array<string> = [];
+  kategorijaFixed: boolean = false;
+
+
+  constructor(private titleService: Title, private cookieService: CookieService, 
+              private restoranService: RestoranService, private obrokService: ObrokService,
+              private scrollToService: ScrollToService) { }
 
   ngOnInit() {
-    let restoranId = Number(this.cookieService.get("restoran_id"));
-    this.cookieService.set("restoran_id","");
-    let restoran: Restoran = this.restoranService.getRestoranById(restoranId);
-    
+    this.scrollToService.scrollToTop();
+    this.restoranId = Number(this.cookieService.get("restoran_id"));
+    this.restoran = this.restoranService.getRestoranById(this.restoranId);
+    this.titleService.setTitle(this.restoran.naziv);
+    this.restoran.obroci.forEach(obrokId => this.obroci.push(this.obrokService.getObrokById(obrokId)));
+    this.kategorije = this.restoran.kategorije;
   }
 
+  getSlika(): string{
+    let slika: string =  this.restoranService.getCoverById(this.restoranId);
+    return "url('" + slika + "')";
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+      if(document.documentElement.scrollTop > 400){
+        this.kategorijaFixed = true;
+      }else{
+        this.kategorijaFixed = false;
+      }
+  }
 }

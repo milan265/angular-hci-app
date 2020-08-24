@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { ScrollToService } from 'src/app/services/scroll-to.service';
 
 @Component({
   selector: 'app-pocetna',
@@ -33,9 +34,10 @@ export class PocetnaComponent implements OnInit {
   filteredOptions: Observable<string[]>;
   
   constructor(private titleService: Title, private router: Router, private cookieService: CookieService, 
-              private restoranService: RestoranService) { }
+              private restoranService: RestoranService, private scrollToService: ScrollToService) { }
 
   ngOnInit() {
+    this.scrollToService.scrollToTop();
     this.titleService.setTitle("Dostava hrane");
     this.restorani = this.restoranService.najboljiRestorani(this.brKolona*this.brRedova);
     this.restoraniManji = this.restoranService.najboljiRestorani(this.brKolonaManji*this.brRedovaManji);
