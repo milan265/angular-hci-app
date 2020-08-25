@@ -15,6 +15,7 @@
     font-size: 3vh;
 }
 
+/* obroci */
 mat-card{
     cursor: pointer;
     margin-bottom: 30px;
@@ -37,6 +38,7 @@ mat-card{
     font-weight: bold;
 }
 
+/* kategorije */
 .kategorije-meni{
     overflow: auto;
     padding-left: 30px;
@@ -52,6 +54,7 @@ mat-card{
     margin: 15px;
 }
 .kategorije-meni a{
+    cursor: pointer;
     color: black;
 }
 

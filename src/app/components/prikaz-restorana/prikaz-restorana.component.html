@@ -14,14 +14,14 @@
         <div *ngIf="!kategorijaFixed" fxLayout="column" fxFlex="25" class="kategorije-meni">
             <p class="kategorije-naslov">Kategorije</p>
             <div *ngFor="let kategorija of kategorije; let i=index">
-                <a href="/prikaz-restorana#{{i}}"><div>{{kategorija}}</div></a>
+                <a (click)="scrollToElement(i)"><div>{{kategorija}}</div></a>
             </div>
         </div> 
         
         <div *ngIf="kategorijaFixed" fxLayout="column" fxFlex="25" class="kategorije-meni kategorije-meni-fixed">
             <p class="kategorije-naslov">Kategorije</p>
             <div *ngFor="let kategorija of kategorije; let i=index">
-                <a href="/prikaz-restorana#{{i}}"><div>{{kategorija}}</div></a>
+                <a (click)="scrollToElement(i)"><div>{{kategorija}}</div></a>
             </div>
         </div>
         <div *ngIf="kategorijaFixed" fxFlex="25">

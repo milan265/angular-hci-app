@@ -48,4 +48,9 @@ export class PrikazRestoranaComponent implements OnInit {
         this.kategorijaFixed = false;
       }
   }
+
+  scrollToElement(id): void {
+    let element = document.getElementById(id);
+    element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  }
 }
