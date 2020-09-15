@@ -25,11 +25,11 @@ mat-card{
     padding: 30px;
     background-color: #f7f7f7;
 }
-.naziv-restorana{
+.naziv-obroka{
     font-weight: bold;
 }
 
-.opis-restorana{
+.opis-obroka{
     font-style: italic;
     font-size: 13px;
 }

@@ -1,0 +1,56 @@
+<section fxLayout="column">
+    <div fxLayoutAlign="center center">
+        <img src="{{podaci.obrok.slika}}" alt="">
+    </div>
+    <div fxLayout="column" mat-dialog-title>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <span>{{podaci.obrok.naziv}}</span>
+            <span>{{cena}},00 RSD</span>
+        </div>
+        <div class="obrok-opis">
+            {{podaci.obrok.opis}}
+        </div>
+    </div>
+    <mat-dialog-content fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="30px">    
+        <div class="width100" fxLayout="column">
+            <div class="width100" *ngFor="let naslov of naslovi" fxLayout="column">
+                <p>{{naslov}}</p>
+                <mat-radio-group class="width100" [(ngModel)]='radioButton'>
+                    <div class="width100" *ngFor="let prilog of prilozi">
+                        <div class="width100" *ngIf="prilog.naslovDodatka == naslov" fxLayout="column">
+                            <mat-checkbox *ngIf="prilog.visestrukiIzbor" (click)="checkBoxClick(prilog.id)">
+                                <div class="width100" fxLayout="row" fxLayoutAlign="space-between center">
+                                    <span>{{prilog.naziv}}</span>
+                                    <span>{{prilog.cena}},00 RSD</span>
+                                </div>
+                            </mat-checkbox>
+                            <mat-radio-button *ngIf="!prilog.visestrukiIzbor" value="{{prilog.id}}" (click)="radioButtonClick(prilog.id)">
+                                <div class="width100" fxLayout="row" fxLayoutAlign="space-between center">
+                                    <span>{{prilog.naziv}}</span>
+                                    <span>{{prilog.cena}},00 RSD</span>
+                                </div>
+                            </mat-radio-button>
+                        </div>
+                    </div>
+                </mat-radio-group>
+            </div>
+        </div>
+        <mat-form-field>
+            <textarea matInput placeholder="Dodatni zahtevi"></textarea>
+        </mat-form-field>
+        <span *ngIf="!ulogovan" id="poruka">Samo prijavljeni korisnici mogu da izvrše kupovinu</span>
+    </mat-dialog-content>
+
+    <mat-dialog-actions fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="15px">
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="5px">
+            <button mat-mini-fab color="primary" (click)="smanjiKolicinu()">-</button>
+            <span>{{kolicina}}</span>
+            <button mat-mini-fab color="primary" (click)="povecajKolicinu()">+</button>
+        </div>
+        
+        <div>
+            <button mat-raised-button color="primary" [mat-dialog-close]="false">Odustani</button>
+            <button mat-raised-button color="warn" [mat-dialog-close]="true" [disabled]="!ulogovan" (click)="dodajUKorpu()">Dodaj u korpu</button>
+        </div>
+    </mat-dialog-actions>
+</section>

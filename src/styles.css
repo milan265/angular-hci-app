@@ -6,7 +6,7 @@
 @import '~ngx-bar-rating/themes/br-fontawesome-theme';
 
 html, body{
-    font-family: Roboto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     min-height: 100%;
     margin:0px;
 }

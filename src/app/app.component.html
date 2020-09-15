@@ -94,8 +94,8 @@
             </div>
 
             <div class="prijava-registracija" fxFlex fxLayoutAlign="end" fxLayoutGap="30px" fxHide.lt-md>
-                <button *ngIf="!ulogovan" mat-button color="primary"><a routerLink="/prijava">Prijavite se</a></button>
-                <button *ngIf="!ulogovan" mat-raised-button color="warn"><a routerLink="/registracija">Registrujte se</a></button>
+                <button *ngIf="!ulogovan" mat-button routerLink="/prijava">Prijavite se</button>
+                <button *ngIf="!ulogovan" mat-raised-button color="warn" routerLink="/registracija">Registrujte se</button>
                 <button *ngIf="ulogovan" mat-raised-button color="warn" routerLink="/" (click)="odjaviSe()">Odjavite se</button>
             </div>
         </mat-toolbar>

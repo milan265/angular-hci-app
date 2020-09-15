@@ -178,7 +178,7 @@ export class DodatakObrokuService {
         },
         {
             id: 22,
-            naziv: "urnebes",
+            naziv: "Urnebes",
             naslovDodatka: "Prilozi",
             cena: 0,
             dodatak: true,
@@ -186,7 +186,7 @@ export class DodatakObrokuService {
         },
         {
             id: 23,
-            naziv: "vegeta",
+            naziv: "Vegeta",
             naslovDodatka: "Prilozi",
             cena: 0,
             dodatak: true,

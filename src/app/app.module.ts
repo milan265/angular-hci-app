@@ -32,6 +32,7 @@ import { UsloviKoriscenjaComponent } from './components/uslovi-koriscenja/uslovi
 import { ZaboravljenaLozinkaComponent } from './components/auth/prijava/zaboravljena-lozinka/zaboravljena-lozinka.component';
 import { PrikazRestoranaComponent } from './components/prikaz-restorana/prikaz-restorana.component';
 import { ScrollComponent } from './components/scroll/scroll.component';
+import { DodavanjePrilogaComponent } from './components/prikaz-restorana/dodavanje-priloga/dodavanje-priloga.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { ScrollComponent } from './components/scroll/scroll.component';
     UsloviKoriscenjaComponent,
     ZaboravljenaLozinkaComponent,
     PrikazRestoranaComponent,
-    ScrollComponent
+    ScrollComponent,
+    DodavanjePrilogaComponent
   ],
   imports: [
     BrowserModule,
@@ -73,6 +75,9 @@ import { ScrollComponent } from './components/scroll/scroll.component';
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2000}}
   ],
   bootstrap: [AppComponent],
-  entryComponents: [ZaboravljenaLozinkaComponent]
+  entryComponents: [
+    ZaboravljenaLozinkaComponent,
+    DodavanjePrilogaComponent
+  ]
 })
 export class AppModule { }

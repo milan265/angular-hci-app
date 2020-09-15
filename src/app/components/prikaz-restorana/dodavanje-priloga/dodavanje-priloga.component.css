@@ -1,0 +1,53 @@
+section{
+    width: 100%;
+    padding: 20px;
+}
+
+.obrok-opis{
+    font-style: italic;
+    font-size: 13px;
+}
+
+div img{
+    width: 75%;
+}
+mat-form-field{
+    width: 100%;
+}
+
+#poruka{
+    font-size:14px;
+    color: red;
+}
+
+#donji-deo{
+    min-height: max-content;
+}
+mat-dialog-content{
+    max-height: max-content;
+}
+
+
+.width100{
+    width: 100%;
+}
+
+
+.izbor:hover{
+    cursor: pointer;
+}
+
+mat-radio-group{
+    margin-bottom: 50px;
+}
+
+mat-radio-button, mat-checkbox{
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #f3f3f3;
+}
+
+::ng-deep .mat-radio-label-content, ::ng-deep .mat-checkbox-layout,::ng-deep .mat-checkbox-label{
+    width: 100%;
+}

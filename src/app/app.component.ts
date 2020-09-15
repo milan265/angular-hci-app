@@ -12,9 +12,9 @@ export class AppComponent implements OnInit {
   greska404: boolean = false;
   ulogovan: boolean = false;
   kolacici: boolean = false;
-  ruteNijePrijavljen: Array<string> = ["/","/registracija","/prijava","/uslovi-koriscenja"];  
+  ruteNijePrijavljen: Array<string> = ["/","/registracija","/prijava","/uslovi-koriscenja","/prikaz-restorana"];  
   rutePrijavljen: Array<string> = ["/","/profil","/narudzbine","/omiljena-hrana","/omiljeni-restorani",
-                                  "/adrese","/kartice","/utisci","/uslovi-koriscenja"];
+                                  "/adrese","/kartice","/utisci","/uslovi-koriscenja","/prikaz-restorana"];
   prijavljenKorisnikIme: string;
 
 
