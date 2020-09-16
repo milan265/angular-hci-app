@@ -5,7 +5,7 @@
     <div fxLayout="column" mat-dialog-title>
         <div fxLayout="row" fxLayoutAlign="space-between center">
             <span>{{podaci.obrok.naziv}}</span>
-            <span>{{cena}},00 RSD</span>
+            <span>{{ukupnaCena}},00 RSD</span>
         </div>
         <div class="obrok-opis">
             {{podaci.obrok.opis}}
@@ -15,16 +15,16 @@
         <div class="width100" fxLayout="column">
             <div class="width100" *ngFor="let naslov of naslovi" fxLayout="column">
                 <p>{{naslov}}</p>
-                <mat-radio-group class="width100" [(ngModel)]='radioButton'>
+                <mat-radio-group class="width100">
                     <div class="width100" *ngFor="let prilog of prilozi">
-                        <div class="width100" *ngIf="prilog.naslovDodatka == naslov" fxLayout="column">
-                            <mat-checkbox *ngIf="prilog.visestrukiIzbor" (click)="checkBoxClick(prilog.id)">
+                        <div id="idprimer" class="width100" *ngIf="prilog.naslovDodatka == naslov" fxLayout="column">
+                            <mat-checkbox *ngIf="prilog.visestrukiIzbor" [(ngModel)]="check[prilog.id]" (click)="checkBoxClick(prilog.id)">
                                 <div class="width100" fxLayout="row" fxLayoutAlign="space-between center">
                                     <span>{{prilog.naziv}}</span>
                                     <span>{{prilog.cena}},00 RSD</span>
                                 </div>
                             </mat-checkbox>
-                            <mat-radio-button *ngIf="!prilog.visestrukiIzbor" value="{{prilog.id}}" (click)="radioButtonClick(prilog.id)">
+                            <mat-radio-button *ngIf="!prilog.visestrukiIzbor" [checked]="check[prilog.id]" value="{{prilog.id}}" (click)="radioButtonClick(prilog.id)">
                                 <div class="width100" fxLayout="row" fxLayoutAlign="space-between center">
                                     <span>{{prilog.naziv}}</span>
                                     <span>{{prilog.cena}},00 RSD</span>

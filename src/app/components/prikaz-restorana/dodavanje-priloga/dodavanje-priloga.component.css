@@ -33,20 +33,17 @@ mat-dialog-content{
 }
 
 
-.izbor:hover{
-    cursor: pointer;
-}
-
 mat-radio-group{
     margin-bottom: 50px;
 }
 
-mat-radio-button, mat-checkbox{
+#idprimer{
     width: 100%;
     padding: 10px;
     margin-top: 20px;
     background-color: #f3f3f3;
 }
+
 
 ::ng-deep .mat-radio-label-content, ::ng-deep .mat-checkbox-layout,::ng-deep .mat-checkbox-label{
     width: 100%;
