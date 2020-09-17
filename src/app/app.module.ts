@@ -27,12 +27,13 @@ import { NarudzbineComponent } from './components/narudzbine/narudzbine.componen
 import { OmiljeniRestoraniComponent } from './components/omiljeni-restorani/omiljeni-restorani.component';
 import { AdreseComponent } from './components/adrese/adrese.component';
 import { UtisciComponent } from './components/utisci/utisci.component';
-import { KarticeComponent } from './components/kartice/kartice.component';
 import { UsloviKoriscenjaComponent } from './components/uslovi-koriscenja/uslovi-koriscenja.component';
 import { ZaboravljenaLozinkaComponent } from './components/auth/prijava/zaboravljena-lozinka/zaboravljena-lozinka.component';
 import { PrikazRestoranaComponent } from './components/prikaz-restorana/prikaz-restorana.component';
 import { ScrollComponent } from './components/scroll/scroll.component';
 import { DodavanjePrilogaComponent } from './components/prikaz-restorana/dodavanje-priloga/dodavanje-priloga.component';
+import { JelovnikComponent } from './components/prikaz-restorana/jelovnik/jelovnik.component';
+import { PrikazRestoranaUtisciComponent } from './components/prikaz-restorana/prikaz-restorana-utisci/prikaz-restorana-utisci.component';
 
 
 @NgModule({
@@ -48,12 +49,13 @@ import { DodavanjePrilogaComponent } from './components/prikaz-restorana/dodavan
     OmiljeniRestoraniComponent,
     AdreseComponent,
     UtisciComponent,
-    KarticeComponent,
     UsloviKoriscenjaComponent,
     ZaboravljenaLozinkaComponent,
     PrikazRestoranaComponent,
     ScrollComponent,
-    DodavanjePrilogaComponent
+    DodavanjePrilogaComponent,
+    JelovnikComponent,
+    PrikazRestoranaUtisciComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,52 @@
 <section class="mainHeight">
+    <div *ngIf="imaOmiljenih" fxLayout="row">
+        <div *ngIf="!kategorijaFixed" fxLayout="column" fxFlex="25" class="kategorije-meni">
+            <p class="kategorije-naslov">Kategorije</p>
+            <div *ngFor="let kategorija of kategorije; let i=index">
+                <a (click)="scrollToElement(i)"><div>{{kategorija}}</div></a>
+            </div>
+        </div> 
+        
+        <div *ngIf="kategorijaFixed" fxLayout="column" fxFlex="25" class="kategorije-meni kategorije-meni-fixed">
+            <p class="kategorije-naslov">Kategorije</p>
+            <div *ngFor="let kategorija of kategorije; let i=index">
+                <a (click)="scrollToElement(i)"><div>{{kategorija}}</div></a>
+            </div>
+        </div>
+        <div *ngIf="kategorijaFixed" fxFlex="25">
 
+        </div>
+
+        <div class="obroci" fxFlex="50">
+            <div *ngFor="let kategorija of kategorije; let i=index" fxLayout="column">
+                <p id="{{i}}"class="naziv-kategorije">{{kategorija}}</p>
+                <div fxLayout="column">
+                    <div *ngFor="let obrok of obroci" (click)="dodajPrilog(obrok.id)">
+                        <mat-card *ngIf="obrok.kategorija==kategorija" fxLayout="row">
+                            <mat-card-content fxFlex="80" fxLayout="column" fxLayoutGap="5px">
+                                <p class='naziv-obroka'>{{obrok.naziv}}</p>
+                                <p class='opis-obroka'>{{obrok.opis}}</p>
+                                <p>{{obrok.cena}},00 RSD</p>
+                            </mat-card-content>
+                            <img fxFlex="20" mat-card-image src="{{obrok.slika}}">
+                        </mat-card>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        
+        <div fxFlex="25" fxLayout="column">
+        </div>
+    </div>
+
+    <div *ngIf="!imaOmiljenih">
+        <div fxFlex="25">
+        </div>
+        <div fxFlex="50" fxLayout="column" class="obroci">
+            Nema omiljenih restorana
+        </div>
+        
+        <div fxFlex="25">
+        </div>
+    </div>
 </section>

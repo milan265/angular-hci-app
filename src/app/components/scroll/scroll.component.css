@@ -4,6 +4,7 @@
     right: 25px;
     opacity: 0;
     transition: all .2s ease-in-out;
+    z-index: 999;
 }
 
 .show-scroll {
@@ -11,4 +12,4 @@
 }
 .scroll-button {
     cursor: pointer;
-  }
+}

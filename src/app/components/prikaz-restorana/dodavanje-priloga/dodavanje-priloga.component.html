@@ -4,7 +4,14 @@
     </div>
     <div fxLayout="column" mat-dialog-title>
         <div fxLayout="row" fxLayoutAlign="space-between center">
-            <span>{{podaci.obrok.naziv}}</span>
+            <span fxLayout="row" fxLayoutAlign="center center">{{podaci.obrok.naziv}} 
+                <button *ngIf="ulogovan && !omiljenaHrana" mat-icon-button matTooltip="Dodaj u omiljenu hranu" (click)="dodajOmiljenuHranu()">
+                    <mat-icon>favorite_border</mat-icon>
+                </button>
+                <button *ngIf="ulogovan && omiljenaHrana" color="warn" mat-icon-button matTooltip="Ukloni iz omiljene hrane" (click)="ukloniOmiljenuHranu()">
+                    <mat-icon>favorite</mat-icon>
+                </button>
+            </span>
             <span>{{ukupnaCena}},00 RSD</span>
         </div>
         <div class="obrok-opis">
@@ -36,7 +43,7 @@
             </div>
         </div>
         <mat-form-field>
-            <textarea matInput placeholder="Dodatni zahtevi"></textarea>
+            <textarea [(ngModel)]="dodatniZahtevi" matInput placeholder="Dodatni zahtevi"></textarea>
         </mat-form-field>
         <span *ngIf="!ulogovan" id="poruka">Samo prijavljeni korisnici mogu da izvrše kupovinu</span>
     </mat-dialog-content>

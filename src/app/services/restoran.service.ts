@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Restoran } from '../models/restoran.model';
+import { Utisak } from '../models/utisak.model';
 
 @Injectable({
     providedIn: 'root'
@@ -22,7 +23,9 @@ export class RestoranService {
             kategorije:["Roštilj","Piletina","Pohovano","Sendviči","Pomfrit","Palačinke","Piće"],
             tagovi:["rostilj","piletina","pohovano","sendvic","sendvici","pomfrit","slatke palacinke","palacinke","pice"],
             ocena: 4.3,
-            minCenaNarudzbine: 600  
+            minCenaNarudzbine: 600,
+            utisci:[],
+            mapa: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2831.377755882947!2d20.493206914924144!3d44.793489585966675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a707e00f5901b%3A0xb3c6b2398fb294ac!2sGrill%2051!5e0!3m2!1sen!2srs!4v1600376622679!5m2!1sen!2srs" 
         },
         {
             id: 2,
@@ -39,7 +42,52 @@ export class RestoranService {
             kategorije:["Roštilj","Palačinke","Ostalo","Piće"],
             tagovi:["rostilj","sendvici","sendvic","slane palacinke","palacinke","slatke palacinke","pomfrit","pice"],
             ocena: 4.6,
-            minCenaNarudzbine: 800 
+            minCenaNarudzbine: 800 ,
+            utisci: [
+                {
+                    ocena: 4,
+                    komentar: "Hrana je ukusna",
+                    korisnik: 1,
+                    vreme: "17-Sep-2020",
+                    restoran: 2
+                },
+                {
+                    ocena: 5,
+                    komentar: "Hrana je ukusna",
+                    korisnik: 1,
+                    vreme: "17-Sep-2020",
+                    restoran: 2
+                },
+                {
+                    ocena: 5,
+                    komentar: "",
+                    korisnik: 1,
+                    vreme: "17-Sep-2020",
+                    restoran: 2
+                },
+                {
+                    ocena: 4,
+                    komentar: "Hrana je ukusna",
+                    korisnik: 1,
+                    vreme: "17-Sep-2020",
+                    restoran: 2
+                },
+                {
+                    ocena: 5,
+                    komentar: "Hrana je ukusna",
+                    korisnik: 1,
+                    vreme: "17-Sep-2020",
+                    restoran: 2
+                },
+                {
+                    ocena: 5,
+                    komentar: "",
+                    korisnik: 1,
+                    vreme: "17-Sep-2020",
+                    restoran: 2
+                }
+            ],
+            mapa: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.9352608487793!2d20.479857414924442!3d44.80250798537175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a7b8a026c8575%3A0x2a81345b1d2ccf59!2sPile%20%26%20Prase!5e0!3m2!1sen!2srs!4v1600376476955!5m2!1sen!2srs"
         },
         {
             id: 3,
@@ -56,7 +104,8 @@ export class RestoranService {
             kategorije:["Roštilj","Salate","Pomfrit","Palačinke","Piće"],
             tagovi:["rostilj","salate","salata","pomfrit","palacinke","deserti","pice"],
             ocena: 4.4,
-            minCenaNarudzbine: 800  
+            minCenaNarudzbine: 800,
+            utisci:[]  
         },
         {
             id: 4,
@@ -73,7 +122,8 @@ export class RestoranService {
             kategorije:["Pica"],
             tagovi:["pica","pizza","italijanska"],
             ocena: 4.2,
-            minCenaNarudzbine: 600  
+            minCenaNarudzbine: 600,
+            utisci:[]   
         },
         {
             id: 5,
@@ -90,7 +140,8 @@ export class RestoranService {
             kategorije:["Pica"],
             tagovi:["pica","pizza","italijanska"],
             ocena: 4.0,
-            minCenaNarudzbine: 600  
+            minCenaNarudzbine: 600,
+            utisci:[]   
         },
         {
             id: 6,
@@ -107,7 +158,8 @@ export class RestoranService {
             kategorije:["Pica"],
             tagovi:["pica","pizza","italijanska"],
             ocena: 4.5,
-            minCenaNarudzbine: 700  
+            minCenaNarudzbine: 700,
+            utisci:[]   
         },
         {
             id: 7,
@@ -124,7 +176,8 @@ export class RestoranService {
             kategorije:["Pica"],
             tagovi:["pica","pizza","italijanska","rostilj","sendvici","pohovano","palacinke"],
             ocena: 4.0,
-            minCenaNarudzbine: 600  
+            minCenaNarudzbine: 600,
+            utisci:[]   
         },
         {
             id: 8,
@@ -141,7 +194,8 @@ export class RestoranService {
             kategorije:["Pica"],
             tagovi:["pica","pizza","italijanska","rostilj","sendvici","palacinke","slatke palacinke"],
             ocena: 4.0,
-            minCenaNarudzbine: 500  
+            minCenaNarudzbine: 500,
+            utisci:[]   
         },
         {
             id: 9,
@@ -158,7 +212,8 @@ export class RestoranService {
             kategorije:["Burgeri junetina","Burgeri piletina", "Burger vegetarijanski"],
             tagovi:["burgeri"],
             ocena: 4.7,
-            minCenaNarudzbine: 900  
+            minCenaNarudzbine: 900,
+            utisci:[]   
         },
         {
             id: 10,
@@ -175,7 +230,8 @@ export class RestoranService {
             kategorije:["Mc Obrok","Burgeri","Pomfrit","Šejkovi"],
             tagovi:["obrok","burgeri","pomfrit","sejkovi"],
             ocena: 4.1,
-            minCenaNarudzbine: 600  
+            minCenaNarudzbine: 600,
+            utisci:[]   
         },
         {
             id: 11,
@@ -192,7 +248,8 @@ export class RestoranService {
             kategorije:["Piletina","Svinjetina","Desert"],
             tagovi:["piletina","svinjetina","teletina","desert","kineska"],
             ocena: 3.9,
-            minCenaNarudzbine: 800  
+            minCenaNarudzbine: 800,
+            utisci:[]   
         },
         {
             id: 12,
@@ -209,7 +266,8 @@ export class RestoranService {
             kategorije:["Piletina","Svinjetina","Teletina","Desert"],
             tagovi:["piletina","svinjetina","teletina","desert","kineska"],
             ocena: 4.4,
-            minCenaNarudzbine: 800  
+            minCenaNarudzbine: 800,
+            utisci:[]   
         },
         {
             id: 13,
@@ -226,7 +284,8 @@ export class RestoranService {
             kategorije:["Giros"],
             tagovi:["giros"],
             ocena: 4.2,
-            minCenaNarudzbine: 700  
+            minCenaNarudzbine: 700,
+            utisci:[]   
         }
     ];
     
@@ -256,7 +315,23 @@ export class RestoranService {
         return this.restoranPodaci.find(restoran => restoran.id == id).cover;
     }
 
+    getLogoById(id:number):string{
+        return this.restoranPodaci.find(restoran => restoran.id == id).logo;
+    }
+
+    getRestoranNazivById(id:number):string{
+        return this.restoranPodaci.find(restoran => restoran.id == id).naziv;
+    }
+
     najboljiRestorani(n: number):Array<Restoran>{
         return this.restoranPodaci.sort((r1,r2)=>r2.ocena-r1.ocena).slice(0,n);
+    }
+
+    getUtisciById(id:number):Array<Utisak>{
+        return this.restoranPodaci.find(restoran => restoran.id == id).utisci;
+    }
+
+    getMapaById(id:number):string{
+        return this.restoranPodaci.find(restoran => restoran.id == id).mapa;
     }
 }

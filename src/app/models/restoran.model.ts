@@ -14,4 +14,5 @@ export interface Restoran{
     kategorije: Array<string>;
     tagovi: Array<string>;
     minCenaNarudzbine: number;
+    mapa?: string;
 }

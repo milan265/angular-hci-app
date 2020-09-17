@@ -1,5 +1,18 @@
-section > div{
-    margin-top: 100px;
+.background-image{
+    height: 250px;
+    background-size: 100% 250%;
+    background-position: 50% 35%;
+}
+.background-image > h1, .background-image > p{
+    color: white;
+    text-shadow: 2px 2px #242222;
+    /*background-color: rgba(20, 20, 20, 0.5);
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 2px;*/
+}
+.background-image > p{
+    font-size: 3vh;
 }
 
 /* obroci */
@@ -61,4 +74,20 @@ mat-card{
     position: fixed;
     left: 0px;
     top: 0px;
+}
+
+/*info*/
+.info{
+    overflow: auto;
+}
+.info-fixed{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+}
+
+.info img{
+    width: 90px;
 }

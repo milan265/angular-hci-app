@@ -1,0 +1,30 @@
+<section class="mainHeight" fxLayout="row" fxLayoutAlign="center center">
+    <div fxFlex="25" fxLayout="column">
+
+    </div>
+    <div *ngIf="!nemaUtisaka" class="utisci" fxFlex="50">
+        <div *ngFor="let utisak of utisci" fxLayout="column">
+            <mat-card>
+                <mat-card-content fxLayout="column" fxLayoutGap="10px">
+                    <div fxLayout="row" fxLayoutAlign="space-between center">
+                        <div fxLayout="row" fxLayoutGap="15px">
+                            <span id="ime">{{getImeById(utisak.korisnik)}}</span>
+                            <span id="vreme">{{utisak.vreme}}</span>
+                        </div>
+                        <span> 
+                            <bar-rating [rate]="utisak.ocena" [readOnly]="true" [max]="5" theme="fontawesome"></bar-rating>
+                        </span>
+                    </div>
+                    <p>{{utisak.komentar}}</p>
+                </mat-card-content>
+            </mat-card>
+        </div> 
+    </div>
+    <div id="nemaUtisaka" *ngIf="nemaUtisaka" fxFlex="50" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="50px">
+        <p>Trenutno korisnici nisu ocenili {{restoranNaziv}} restoran.</p>
+        <p>Naručite hranu i budite prvi koji će oceniti {{restoranNaziv}} restoran.</p>   
+    </div>
+    <div fxFlex="25" fxLayout="column">
+
+    </div>
+</section>

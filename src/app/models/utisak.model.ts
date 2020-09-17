@@ -1,5 +1,7 @@
 export interface Utisak{
     ocena: number;
     komentar: string;
-    ko: number;
+    korisnik: number;
+    vreme: string;
+    restoran: number;
 }

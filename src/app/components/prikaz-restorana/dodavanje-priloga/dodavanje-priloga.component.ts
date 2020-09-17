@@ -3,6 +3,7 @@ import { MatSnackBar, MAT_DIALOG_DATA } from '@angular/material'
 import { CookieService } from 'ngx-cookie-service';
 import { DodatakObroku } from 'src/app/models/dodatakObroku.model';
 import { DodatakObrokuService } from 'src/app/services/dodatakObroku.service';
+import { KorisnikService } from 'src/app/services/korisnik.service';
 
 @Component({
   selector: 'app-dodavanje-priloga',
@@ -20,13 +21,17 @@ export class DodavanjePrilogaComponent implements OnInit {
   naslovi: Array<string> = [];
   izabraniPrilozi: Array<number> = [];
   check: Array<boolean>=[];
+  dodatniZahtevi: string = "";
+  omiljenaHrana: boolean = false;
+  email: string = ""
 
  
   constructor(@Inject(MAT_DIALOG_DATA) public podaci: any, private dodatakObrokuService: DodatakObrokuService,
-              private cookieService: CookieService, private snackBar: MatSnackBar) { }
+              private cookieService: CookieService, private snackBar: MatSnackBar, private korisnikService: KorisnikService) { }
 
   ngOnInit() {
     this.ulogovan = (this.cookieService.get('ulogovan')=='true')?true:false;
+    this.email = this.cookieService.get('email');
     this.podaci.obrok.dodaci.forEach(id=>this.prilozi.push(this.dodatakObrokuService.getDodatakObrokuById(id)));
     var sviNaslovi = this.prilozi.map(e=>e.naslovDodatka);
     this.naslovi = sviNaslovi.filter((v, i, a) => a.indexOf(v) === i);
@@ -46,6 +51,17 @@ export class DodavanjePrilogaComponent implements OnInit {
       this.cenaObroka = this.podaci.obrok.cena;
     }
     this.izracunajUkupnuCenu();
+    this.omiljenaHrana = this.korisnikService.isOmiljenaHrana(this.email,this.podaci.obrok.id);
+  }
+
+  dodajOmiljenuHranu(){
+    this.korisnikService.dodajOmiljenuHranu(this.email,this.podaci.obrok.id);
+    this.omiljenaHrana = true;
+  }
+
+  ukloniOmiljenuHranu(){
+    this.korisnikService.ukloniOmiljenuHranu(this.email, this.podaci.obrok.id);
+    this.omiljenaHrana = false;
   }
 
   smanjiKolicinu(){
@@ -73,6 +89,12 @@ export class DodavanjePrilogaComponent implements OnInit {
   }
 
   radioButtonClick(prilogId){
+    this.prilozi.forEach(e=>{
+      if(!e.visestrukiIzbor){
+        this.check[e.id] = false;
+      }
+    });
+    this.check[prilogId] = true;
     this.cenaObroka = this.dodatakObrokuService.getCenaById(prilogId);
     this.izracunajUkupnuCenu();
   }
@@ -82,10 +104,24 @@ export class DodavanjePrilogaComponent implements OnInit {
   }
 
   dodajUKorpu(){
-    let sadrzajKorpe = [{a:1,b:2},{a:3,b:4}];
-    let sadrzajKorpeString = JSON.stringify(sadrzajKorpe);
-    
-    this.cookieService.set("korpa", sadrzajKorpeString);
+    for(let i=0; i<this.check.length; i++){
+      if(this.check[i]){
+        this.izabraniPrilozi.push(i);
+      }
+    }
+    let sadrzajKorpe = {
+      obrok: this.podaci.obrok.id,
+      dodaci:this.izabraniPrilozi,
+      kolicina: this.kolicina,
+      cena: this.ukupnaCena,
+      dodatniZahtevi:this.dodatniZahtevi
+    };
+    let cookieKorpa = []
+    if(this.cookieService.check("korpa")){
+      cookieKorpa = JSON.parse(this.cookieService.get("korpa"));
+    }
+    cookieKorpa.push(sadrzajKorpe);
+    this.cookieService.set("korpa",JSON.stringify(cookieKorpa));
     this.snackBar.open("Uspešno ste dodali proizvod u korpu");
   }
 }

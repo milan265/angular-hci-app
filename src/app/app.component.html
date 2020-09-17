@@ -33,10 +33,6 @@
                 <mat-icon>location_on</mat-icon>
                 Adrese
             </a>
-            <a *ngIf="ulogovan" mat-list-item routerLink="/kartice" (click)="sidenav.close()">
-                <mat-icon>credit_card</mat-icon>
-                Kartice
-            </a>
             <a *ngIf="ulogovan" mat-list-item routerLink="/utisci" (click)="sidenav.close()">
                 <mat-icon>star_outline</mat-icon>
                 Utisci
@@ -82,10 +78,6 @@
                 <button *ngIf="ulogovan" mat-button routerLink="/adrese">
                     <mat-icon>location_on</mat-icon>
                     Adrese  
-                </button>
-                <button *ngIf="ulogovan" mat-button routerLink="/kartice">
-                    <mat-icon>credit_card</mat-icon>
-                    Kartice  
                 </button>
                 <button *ngIf="ulogovan" mat-button routerLink="/utisci">
                     <mat-icon>star_outline</mat-icon>

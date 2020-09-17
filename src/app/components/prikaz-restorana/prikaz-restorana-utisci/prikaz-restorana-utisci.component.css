@@ -1,0 +1,28 @@
+mat-card{
+    margin-bottom: 30px;
+    min-height: 100px;
+}
+
+.utisci{
+    padding: 30px;
+    background-color: #f7f7f7;
+}
+
+#ime{
+    font-weight: bold;
+}
+
+#vreme{
+    font-style: italic;
+    font-size: 13px;
+}
+
+#nemaUtisaka{
+    min-height: 500px;
+    background-color: #f7f7f7;
+}
+
+#nemaUtisaka p{
+    font-size: 22px;
+    text-align: center;
+}
