@@ -22,8 +22,18 @@ export class KorisnikService {
                 region: "Dorćol",
                 ulica: "Cara Dušana",
                 broj: "20",
-                brojStana: "15"
-            }],
+                brojStana: "15",
+                id: 1
+                },
+                {
+                    grad: "Beograd",
+                    region: "Karaburma",
+                    ulica: "Bulevar",
+                    broj: "125",
+                    brojStana: "",
+                    id: 2
+                }
+            ],
             narudzbine: [],
             omiljeniRestorani: [],
             omiljenaHrana: [55,1,2,3,10,13],
@@ -85,7 +95,8 @@ export class KorisnikService {
                 region: "Dorćol",
                 ulica: "Cara Dušana",
                 broj: "15",
-                brojStana: "3a"
+                brojStana: "3a",
+                id: 1
             }],
             narudzbine: [],
             omiljeniRestorani: [],
@@ -157,6 +168,9 @@ export class KorisnikService {
         return this.korisnikPodaci.find(korisnik=>korisnik.email == email).utisci;
     }
 
+    getAdreseByEmail(email:string):Array<Adresa>{
+        return this.korisnikPodaci.find(korisnik=>korisnik.email == email).adrese;
+    }
 
     promeniIme(email:string, novoIme:string):void{
         this.korisnikPodaci.forEach(korisnik=>{ 
@@ -194,6 +208,39 @@ export class KorisnikService {
         });
     }
 
+    dodajAdresu(email:string, adresa: Adresa):void{
+        this.korisnikPodaci.find(korisnik => korisnik.email == email).adrese.push(adresa);
+    }
+
+    izbrisiAdresu(email:string, adresaId: number):void{
+        let adrese = this.korisnikPodaci.find(korisnik => korisnik.email == email).adrese;
+        let index = adrese.indexOf(
+            adrese.find(adresa=>adresa.id==adresaId)
+        );
+        adrese.splice(index, 1);
+        if(index==0 && adrese.length>0){
+            adrese[0].id = 1;
+        }
+    }
+
+    postaviKaoPrimarnu(email:string, adresaId: number):void{
+        let adrese = this.korisnikPodaci.find(korisnik => korisnik.email == email).adrese;
+        adrese.forEach(adresa=>{
+            if(adresa.id!=adresaId){
+                adresa.id++;
+            }else{
+                adresa.id = 1;
+            }
+        });
+        adrese.sort((a,b)=>{
+            if(a.id>b.id){
+                return 1;
+            }else{
+                return -1;
+            }
+        });
+    }
+
     registrujKorisnika(ime:string, prezime:string, email:string, lozinka:string, telefon:string, grad:string, region:string, ulica:string, broj:string, brojStana:string):void{
         let maxId:number = 0;
         this.korisnikPodaci.forEach(korisnik=>{
@@ -204,7 +251,15 @@ export class KorisnikService {
 
         let id:number = ++maxId;
         let datumRegistrovanja:Date = new Date();
-        let adrese:Array<Adresa> = [{grad,region,ulica,broj,brojStana}];
+        let idAdrese: number = 1;
+        let adrese:Array<Adresa> = [{
+            grad: grad,
+            region: region,
+            ulica: ulica,
+            broj: broj,
+            brojStana: brojStana,
+            id: idAdrese
+        }];
         let narudzbine = [];
         let omiljeniRestorani = [];
         let omiljenaHrana = [];

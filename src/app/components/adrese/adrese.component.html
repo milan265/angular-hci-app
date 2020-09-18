@@ -1,3 +1,34 @@
 <section class="mainHeight">
+    <div *ngIf="imaAdresu()" id="sadrzaj-adrese" fxLayout="row">
+        <div fxFlex="25" fxLayout="column">
+        </div>
+        <div class="adrese" fxFlex="50">
+            <div *ngFor="let adresa of adrese" fxLayout="column">
+                <mat-card>
+                    <mat-card-content fxLayout="column" fxLayoutGap="10px">
+                        <div fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="10px">
+                            <span id="grad">{{adresa.grad}}</span>
+                            <span id="region">{{adresa.region}}</span>
+                            <span>{{adresa.ulica}} {{adresa.broj}} <span *ngIf="imaBrojStana(adresa)">, {{adresa.brojStana}}</span></span>
+                            <span class="primarna" *ngIf="primarna(adresa)">Ova adresa Vam je izabrana kao primarna</span>
+                        </div>
+                        <div fxLayoutAlign="end center" fxLayoutGap="10px">
+                            <button mat-raised-button color="primary" *ngIf="!primarna(adresa)" (click)="izaberiKaoPrimarnu(adresa)">Izaberite kao primarnu</button>
+                            <button mat-raised-button color="warn" (click)="izbrisiAdresu(adresa)">Izbrišite adresu</button>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div> 
+        </div>
+        <div fxFlex="25" fxLayout="column" fxLayoutAlign="start center">
+            <button mat-raised-button color="primary" (click)="dodajNovuAdresu()">Dodajte novu adresu</button>
+        </div>
+    </div>
 
+    <div *ngIf="!imaAdresu()" fxLayoutAlign="center center">
+        <div id="nemaAdresu"  fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="50px">
+            <p>Trenutno nemate unetih adresa</p>
+            <button mat-raised-button color="primary" (click)="dodajNovuAdresu()">Dodajte novu adresu</button>
+        </div>
+    </div>
 </section>

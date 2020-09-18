@@ -4,4 +4,5 @@ export interface Adresa{
     ulica: string;
     broj: string;
     brojStana?: string;
+    id?: number;
 }

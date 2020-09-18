@@ -35,6 +35,11 @@ import { DodavanjePrilogaComponent } from './components/prikaz-restorana/dodavan
 import { JelovnikComponent } from './components/prikaz-restorana/jelovnik/jelovnik.component';
 import { PrikazRestoranaUtisciComponent } from './components/prikaz-restorana/prikaz-restorana-utisci/prikaz-restorana-utisci.component';
 import { KorpaComponent } from './components/korpa/korpa.component';
+import { AktivneComponent } from './components/narudzbine/aktivne/aktivne.component';
+import { IstorijaComponent } from './components/narudzbine/istorija/istorija.component';
+import { DialogPrimarnaComponent } from './components/adrese/dialog-primarna/dialog-primarna.component';
+import { DialogIzbrisiComponent } from './components/adrese/dialog-izbrisi/dialog-izbrisi.component';
+import { DialogDodajComponent } from './components/adrese/dialog-dodaj/dialog-dodaj.component';
 
 
 @NgModule({
@@ -57,7 +62,12 @@ import { KorpaComponent } from './components/korpa/korpa.component';
     DodavanjePrilogaComponent,
     JelovnikComponent,
     PrikazRestoranaUtisciComponent,
-    KorpaComponent
+    KorpaComponent,
+    AktivneComponent,
+    IstorijaComponent,
+    DialogPrimarnaComponent,
+    DialogIzbrisiComponent,
+    DialogDodajComponent
   ],
   imports: [
     BrowserModule,
@@ -81,7 +91,10 @@ import { KorpaComponent } from './components/korpa/korpa.component';
   bootstrap: [AppComponent],
   entryComponents: [
     ZaboravljenaLozinkaComponent,
-    DodavanjePrilogaComponent
+    DodavanjePrilogaComponent,
+    DialogPrimarnaComponent,
+    DialogIzbrisiComponent,
+    DialogDodajComponent
   ]
 })
 export class AppModule { }

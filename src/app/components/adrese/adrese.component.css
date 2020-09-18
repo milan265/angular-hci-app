@@ -1,0 +1,38 @@
+#sadrzaj-adrese{
+    margin-top: 100px;
+}
+.adrese{
+    padding: 30px;
+    background-color: #f7f7f7;
+}
+
+#grad{
+    font-weight: bold;
+}
+
+#region{
+    font-style: italic;
+    font-size: 13px;
+}
+
+mat-card{
+    margin-bottom: 30px;
+    min-height: 100px;
+}
+
+#nemaAdresu{
+    height: 468px;
+    width: 626px;
+    background-image: url("../../../assets/slike/food-background.png");
+}
+
+#nemaAdresu p{
+    font-size: 22px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.primarna{
+    font-weight: normal;
+    font-style: italic;
+}

@@ -1,0 +1,7 @@
+<section fxLayout="column">
+    <h1 mat-dialog-title>Da li želite da promenite primarnu adresu?</h1>
+    <mat-dialog-actions fxLayout="row" fxFlexAlign="end" fxLayoutGap="15px">
+        <button mat-raised-button color="primary" [mat-dialog-close]="false">Odustani</button>
+        <button mat-raised-button color="warn" [mat-dialog-close]="true" (click)="promeni()">Promeni</button>
+    </mat-dialog-actions>
+</section>

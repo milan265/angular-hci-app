@@ -8,6 +8,8 @@ import { Title } from '@angular/platform-browser';
 })
 export class OmiljeniRestoraniComponent implements OnInit {
 
+  imaOmiljenih: boolean = false;
+
   constructor(private titleService: Title) { }
 
   ngOnInit() {

@@ -1,3 +1,32 @@
 <section class="mainHeight">
-
+    <div id="ima-restorana" *ngIf="imaOmiljenih" fxLayout="row">
+        <div fxFlex="25" fxLayout="column">
+        </div>
+        <div class="restorani" fxFlex="50">
+            <div *ngFor="let restoran of restorani" fxLayout="column">
+                <mat-card>
+                    <mat-card-content fxLayout="column" fxLayoutGap="10px">
+                        <div fxLayout="row" fxLayoutAlign="space-between center">
+                            <div fxLayout="row" fxLayoutGap="15px">
+                                <span id="ime">{{getNazivRestoranaById(utisak.restoran)}}</span>
+                                <span id="vreme">{{utisak.vreme}}</span>
+                            </div>
+                            <span> 
+                                <bar-rating [rate]="utisak.ocena" [readOnly]="true" [max]="5" theme="fontawesome"></bar-rating>
+                            </span>
+                        </div>
+                        <p>{{utisak.komentar}}</p>
+                    </mat-card-content>
+                </mat-card>
+            </div> 
+        </div>
+        <div fxFlex="25" fxLayout="column">
+        </div>
+    </div>
+    <div *ngIf="!imaOmiljenih" fxLayoutAlign="center center">
+        <div id="nemaOmiljene" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="50px">
+            <p>Trenutno Vaša lista omiljenih restorana je prazna</p>  
+            <button mat-raised-button color="primary" routerLink="/">Naručite hranu</button>
+        </div>
+    </div>  
 </section>

@@ -1,5 +1,5 @@
 <section class="mainHeight">
-    <div *ngIf="imaOmiljenih" fxLayout="row">
+    <div id="sadrzaj-omiljene" *ngIf="imaOmiljenih" fxLayout="row">
         <div *ngIf="!kategorijaFixed" fxLayout="column" fxFlex="25" class="kategorije-meni">
             <p class="kategorije-naslov">Kategorije</p>
             <div *ngFor="let kategorija of kategorije; let i=index">
@@ -38,12 +38,12 @@
         <div fxFlex="25" fxLayout="column">
         </div>
     </div>
-
-    <div id="nemaOmiljeneDiv" *ngIf="!imaOmiljenih" fxLayoutAlign="center center">
-        <div id="nemaOmiljene" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="50px">
+ 
+    <div *ngIf="!imaOmiljenih" fxLayoutAlign="center center">
+        <div id="nemaOmiljene"  fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="50px">
             <p>Trenutno Vaša lista omiljene hrane je prazna</p>  
-            <button mat-raised-button color="warn" routerLink="/">Naručite hranu</button>
+            <button mat-raised-button color="primary" routerLink="/">Naručite hranu</button>
         </div>
-    </div>  
+    </div>
 
 </section>
