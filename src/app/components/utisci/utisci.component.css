@@ -1,0 +1,30 @@
+mat-card{
+    margin-bottom: 30px;
+    min-height: 100px;
+}
+
+.utisci{
+    padding: 30px;
+    background-color: #f7f7f7;
+}
+
+#ime{
+    font-weight: bold;
+}
+
+#vreme{
+    font-style: italic;
+    font-size: 13px;
+}
+
+#nemaUtisaka{
+    height: 468px;
+    width: 626px;
+    background-image: url("../../../assets/slike/food-background.png");
+}
+
+#nemaUtisaka p{
+    font-size: 22px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+}

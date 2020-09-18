@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Korisnik } from '../models/korisnik.model';
 import { Adresa } from '../models/adresa.model';
+import { Utisak } from '../models/utisak.model';
 
 @Injectable({
     providedIn: 'root'
@@ -26,7 +27,50 @@ export class KorisnikService {
             narudzbine: [],
             omiljeniRestorani: [],
             omiljenaHrana: [55,1,2,3,10,13],
-            utisci: []
+            utisci: [
+                {
+                    ocena: 4,
+                    komentar: "Hrana je ukusna",
+                    korisnik: 1,
+                    vreme: "17-Sep-2020",
+                    restoran: 2
+                },
+                {
+                    ocena: 5,
+                    komentar: "Hrana je ukusna",
+                    korisnik: 1,
+                    vreme: "17-Sep-2020",
+                    restoran: 2
+                },
+                {
+                    ocena: 5,
+                    komentar: "",
+                    korisnik: 1,
+                    vreme: "17-Sep-2020",
+                    restoran: 2
+                },
+                {
+                    ocena: 4,
+                    komentar: "Hrana je ukusna",
+                    korisnik: 1,
+                    vreme: "17-Sep-2020",
+                    restoran: 2
+                },
+                {
+                    ocena: 5,
+                    komentar: "Hrana je ukusna",
+                    korisnik: 1,
+                    vreme: "17-Sep-2020",
+                    restoran: 2
+                },
+                {
+                    ocena: 5,
+                    komentar: "",
+                    korisnik: 1,
+                    vreme: "17-Sep-2020",
+                    restoran: 2
+                }
+            ]
         },
         {  
             id: 2,
@@ -108,6 +152,11 @@ export class KorisnikService {
         let index = this.korisnikPodaci.find(korisnik => korisnik.email == email).omiljeniRestorani.indexOf(idRestoran);
         this.korisnikPodaci.find(korisnik => korisnik.email == email).omiljeniRestorani.splice(index, 1);
     }
+
+    getUtisciByEmail(email:string):Array<Utisak>{
+        return this.korisnikPodaci.find(korisnik=>korisnik.email == email).utisci;
+    }
+
 
     promeniIme(email:string, novoIme:string):void{
         this.korisnikPodaci.forEach(korisnik=>{ 

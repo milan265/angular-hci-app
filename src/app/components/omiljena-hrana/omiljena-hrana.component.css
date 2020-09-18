@@ -68,7 +68,7 @@ mat-card{
 }
 #nemaOmiljene{
     height: 468px;
-    max-width: 626px;
+    width: 626px;
     padding: 0px 50px;
     background-image: url("../../../assets/slike/food-background.png");
 }

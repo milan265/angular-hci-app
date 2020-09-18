@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   kolacici: boolean = false;
   ruteNijePrijavljen: Array<string> = ["/","/registracija","/prijava","/uslovi-koriscenja","/prikaz-restorana"];  
   rutePrijavljen: Array<string> = ["/","/profil","/narudzbine","/omiljena-hrana","/omiljeni-restorani",
-                                  "/adrese","/utisci","/uslovi-koriscenja","/prikaz-restorana"];
+                                  "/adrese","/utisci","/uslovi-koriscenja","/prikaz-restorana","/korpa"];
   prijavljenKorisnikIme: string;
 
 

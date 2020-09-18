@@ -34,6 +34,7 @@ import { ScrollComponent } from './components/scroll/scroll.component';
 import { DodavanjePrilogaComponent } from './components/prikaz-restorana/dodavanje-priloga/dodavanje-priloga.component';
 import { JelovnikComponent } from './components/prikaz-restorana/jelovnik/jelovnik.component';
 import { PrikazRestoranaUtisciComponent } from './components/prikaz-restorana/prikaz-restorana-utisci/prikaz-restorana-utisci.component';
+import { KorpaComponent } from './components/korpa/korpa.component';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { PrikazRestoranaUtisciComponent } from './components/prikaz-restorana/pr
     ScrollComponent,
     DodavanjePrilogaComponent,
     JelovnikComponent,
-    PrikazRestoranaUtisciComponent
+    PrikazRestoranaUtisciComponent,
+    KorpaComponent
   ],
   imports: [
     BrowserModule,
