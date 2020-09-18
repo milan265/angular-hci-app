@@ -39,14 +39,11 @@
         </div>
     </div>
 
-    <div *ngIf="!imaOmiljenih">
-        <div fxFlex="25">
+    <div id="nemaOmiljeneDiv" *ngIf="!imaOmiljenih" fxLayoutAlign="center center">
+        <div id="nemaOmiljene" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="50px">
+            <p>Trenutno Vaša lista omiljene hrane je prazna</p>  
+            <button mat-raised-button color="warn" routerLink="/">Naručite hranu</button>
         </div>
-        <div fxFlex="50" fxLayout="column" class="obroci">
-            Nema omiljenih restorana
-        </div>
-        
-        <div fxFlex="25">
-        </div>
-    </div>
+    </div>  
+
 </section>

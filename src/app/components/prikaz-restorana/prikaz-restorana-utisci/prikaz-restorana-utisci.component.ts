@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { Utisak } from 'src/app/models/utisak.model';
 import { KorisnikService } from 'src/app/services/korisnik.service';
@@ -11,6 +11,7 @@ import { RestoranService } from 'src/app/services/restoran.service';
 })
 export class PrikazRestoranaUtisciComponent implements OnInit {
 
+  @Output() promeniNaJelovnik = new EventEmitter<boolean>();
   utisci: Array<Utisak> = [];
   restoranId: number = 0;
   nemaUtisaka: boolean = true;
@@ -30,4 +31,7 @@ export class PrikazRestoranaUtisciComponent implements OnInit {
     return this.korisnikService.getImeById(id);
   }
 
+  vratiJelovnik():void{
+    this.promeniNaJelovnik.emit(true);
+  }
 }

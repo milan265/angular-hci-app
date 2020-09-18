@@ -33,7 +33,7 @@ export class KorisnikService {
             ime: "Pera",
             prezime: "Perić",
             email:"pera.peric@mail.rs",
-            lozinka:"pera123",
+            lozinka:"pera1234",
             telefon:"0631242659",
             datumRegistrovanja: new Date(2020,9,17),
             adrese:[{
