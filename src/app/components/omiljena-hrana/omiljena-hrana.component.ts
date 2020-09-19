@@ -8,6 +8,7 @@ import { KorisnikService } from 'src/app/services/korisnik.service';
 
 import { Obrok } from 'src/app/models/obrok.model';
 import { DodavanjePrilogaComponent } from 'src/app/components/prikaz-restorana/dodavanje-priloga/dodavanje-priloga.component'; 
+import { RestoranService } from 'src/app/services/restoran.service';
 
 @Component({
   selector: 'app-omiljena-hrana',
@@ -25,7 +26,7 @@ export class OmiljenaHranaComponent implements OnInit {
 
   constructor(private titleService: Title, private cookieService: CookieService, 
               private obrokService: ObrokService,private dialog: MatDialog, 
-              private korisnikService: KorisnikService) { }
+              private korisnikService: KorisnikService, private restoranService: RestoranService) { }
 
   ngOnInit() {
     this.titleService.setTitle("Omiljena hrana");
@@ -54,6 +55,9 @@ export class OmiljenaHranaComponent implements OnInit {
     element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
   }
 
+  getRestoranNaziv(obrokId):string{
+    return this.restoranService.getRestoranNazivById(this.restoranService.getRestoranIdByObrokId(obrokId));
+  }
 
   dodajPrilog(id):void{
     let obrok = this.obrokService.getObrokById(id);

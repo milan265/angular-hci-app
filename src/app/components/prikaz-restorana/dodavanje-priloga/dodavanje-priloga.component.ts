@@ -4,6 +4,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { DodatakObroku } from 'src/app/models/dodatakObroku.model';
 import { DodatakObrokuService } from 'src/app/services/dodatakObroku.service';
 import { KorisnikService } from 'src/app/services/korisnik.service';
+import { RestoranService } from 'src/app/services/restoran.service';
 
 @Component({
   selector: 'app-dodavanje-priloga',
@@ -27,7 +28,8 @@ export class DodavanjePrilogaComponent implements OnInit {
 
  
   constructor(@Inject(MAT_DIALOG_DATA) public podaci: any, private dodatakObrokuService: DodatakObrokuService,
-              private cookieService: CookieService, private snackBar: MatSnackBar, private korisnikService: KorisnikService) { }
+              private cookieService: CookieService, private snackBar: MatSnackBar, 
+              private korisnikService: KorisnikService, private restoranService: RestoranService) { }
 
   ngOnInit() {
     this.ulogovan = (this.cookieService.get('ulogovan')=='true')?true:false;
@@ -109,7 +111,10 @@ export class DodavanjePrilogaComponent implements OnInit {
         this.izabraniPrilozi.push(i);
       }
     }
+    let restoranId: number = this.restoranService.getRestoranIdByObrokId(this.podaci.obrok.id);
+    
     let sadrzajKorpe = {
+      restoran: restoranId,
       obrok: this.podaci.obrok.id,
       dodaci:this.izabraniPrilozi,
       kolicina: this.kolicina,

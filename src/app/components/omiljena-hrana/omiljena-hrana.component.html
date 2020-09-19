@@ -24,6 +24,7 @@
                     <div *ngFor="let obrok of obroci" (click)="dodajPrilog(obrok.id)">
                         <mat-card *ngIf="obrok.kategorija==kategorija" fxLayout="row">
                             <mat-card-content fxFlex="80" fxLayout="column" fxLayoutGap="5px">
+                                <p class="naziv-obroka">{{getRestoranNaziv(obrok.id)}}</p>
                                 <p class='naziv-obroka'>{{obrok.naziv}}</p>
                                 <p class='opis-obroka'>{{obrok.opis}}</p>
                                 <p>{{obrok.cena}},00 RSD</p>

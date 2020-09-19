@@ -40,6 +40,7 @@ import { IstorijaComponent } from './components/narudzbine/istorija/istorija.com
 import { DialogPrimarnaComponent } from './components/adrese/dialog-primarna/dialog-primarna.component';
 import { DialogIzbrisiComponent } from './components/adrese/dialog-izbrisi/dialog-izbrisi.component';
 import { DialogDodajComponent } from './components/adrese/dialog-dodaj/dialog-dodaj.component';
+import { DialogIzbrisiKorpaComponent } from './components/korpa/dialog-izbrisi-korpa/dialog-izbrisi-korpa.component';
 
 
 @NgModule({
@@ -67,7 +68,8 @@ import { DialogDodajComponent } from './components/adrese/dialog-dodaj/dialog-do
     IstorijaComponent,
     DialogPrimarnaComponent,
     DialogIzbrisiComponent,
-    DialogDodajComponent
+    DialogDodajComponent,
+    DialogIzbrisiKorpaComponent
   ],
   imports: [
     BrowserModule,
@@ -94,7 +96,8 @@ import { DialogDodajComponent } from './components/adrese/dialog-dodaj/dialog-do
     DodavanjePrilogaComponent,
     DialogPrimarnaComponent,
     DialogIzbrisiComponent,
-    DialogDodajComponent
+    DialogDodajComponent,
+    DialogIzbrisiKorpaComponent
   ]
 })
 export class AppModule { }

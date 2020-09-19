@@ -1,0 +1,49 @@
+#korpa-sadrzaj{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 30px;
+    background-color: #f7f7f7;
+}
+
+mat-card{
+    margin-bottom: 30px;
+}
+
+
+#praznaKorpa{
+    height: 468px;
+    width: 626px;
+    padding: 0px 50px;
+    /*background-image: url("../../../assets/slike/food-background.png");
+    /*background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;*/
+}
+#praznaKorpa img{
+    width: 150px;
+}
+#praznaKorpa p{
+    font-size: 22px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#poruka span{
+    font-size: 14px;
+    color: red;
+}
+
+#racun{
+    font-weight: bold;
+}
+#racun-cena{
+    margin-left: 5px;
+}
+
+#naruci{
+    margin-top: 15px;
+}
+
+#naziv-obroka{
+    font-weight: bold;
+}

@@ -1,3 +1,65 @@
-<div class="mainHeight" fxLayout="column" fxLayoutAlign="center center">
+<section class="mainHeight">
+    <div *ngIf="!praznaKorpa()" fxLayout="row">
+        <div fxFlex="25">
+        </div>
+        <div id="korpa-sadrzaj" fxFlex="50">
+            <div fxLayoutAlign="center center">
+                <mat-form-field>
+                    <mat-select [(value)]="selected" (selectionChange)="promeniRestoran()">
+                        <mat-option *ngFor="let restoran of restorani" [value]="restoran">
+                            {{getNazivByRestoranId(restoran)}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div id="korpa-restoran" fxLayout="column" fxLayoutGap="10px">
+                <div fxLayoutAlign="end center">
+                    <button mat-icon-button color="primary" matTooltip="Izbrišite narudžbinu" (click)="obrisiNarudzbinu()">
+                        <mat-icon>clear</mat-icon>
+                    </button>
+                </div>
+                <div id="obrok">
+                    <mat-card *ngFor="let obrok of obroci; let i = index">
+                        <mat-card-content fxLayout="column">
+                            <div fxLayout="column" fxLayoutGap="5px">
+                                <span id='naziv-obroka'>{{getNazivObrokById(obrok.obrok)}} x {{obrok.kolicina}}</span>
+                                <span class='opis-obroka'>{{obrok.dodaci}}</span>
+                                <span>{{obrok.dodatniZahtevi}}</span>
+                                <span></span>
+                                <span>{{obrok.cena}},00 RSD</span>
+                            </div>
+                            <div fxLayoutAlign="end center">
+                                <button mat-raised-button color="warn" (click)="izbrisiObrok(i,obrok.obrok)">Uklonite obrok iz korpe</button>
+                            </div>                              
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+
+                <div id="racun" fxLayoutAlign="end center">
+                    <span>Račun <span id="racun-cena">{{racun}},00RSD</span></span>
+                </div>
+
+                <div id="poruka" *ngIf="!dugmeNaruci" fxLayoutAlign="center center">
+                    <span>{{minNarudzbina}},00RSD nedostaje za minimalnu narudžbinu</span>
+                </div>
+
+                <div id="naruci" fxLayoutAlign="space-between center">
+                    <button mat-raised-button color="primary" (click)="povratakNaRestoran()">Povratak na restoran</button>
+                    <button *ngIf="dugmeNaruci" mat-raised-button color="warn" (click)="naruci()">Naruči</button>
+                    <button *ngIf="!dugmeNaruci" mat-raised-button disabled>Naruči</button>
+                </div>
+            </div>
+        </div>
     
-</div>
+        <div fxFlex="25">
+        </div>
+    </div>
+
+    <div *ngIf="praznaKorpa()" fxLayoutAlign="center center">
+        <div id="praznaKorpa"  fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="50px">
+            <img src="../../../assets/slike/korpa2.png" alt="korpa">
+            <p>Trenutno Vaša korpa je prazna</p>  
+            <button mat-raised-button color="primary" routerLink="/">Naručite hranu</button>
+        </div>
+    </div>
+</section>

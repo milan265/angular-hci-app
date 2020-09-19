@@ -56,6 +56,7 @@ export class AppComponent implements OnInit {
     this.cookieService.set("ulogovan","false");
     this.cookieService.set("email","");
     this.cookieService.set("prijavljenKorisnikIme","");
+    this.cookieService.set("korpa","[]");
     this.snackBar.open("Odjavili ste se");
   }
 

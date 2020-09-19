@@ -334,4 +334,12 @@ export class RestoranService {
     getMapaById(id:number):string{
         return this.restoranPodaci.find(restoran => restoran.id == id).mapa;
     }
+
+    getRestoranIdByObrokId(obrokId:number):number{
+        return this.restoranPodaci.find(restoran => restoran.obroci.includes(obrokId)).id;
+    }
+
+    getMinCenaNarudzbineById(id:number):number{
+        return this.restoranPodaci.find(restoran => restoran.id == id).minCenaNarudzbine;
+    }
 }
