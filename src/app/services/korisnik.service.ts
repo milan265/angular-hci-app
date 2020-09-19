@@ -212,6 +212,16 @@ export class KorisnikService {
         this.korisnikPodaci.find(korisnik => korisnik.email == email).adrese.push(adresa);
     }
 
+    getNewAdresaId(email:string):number{
+        let maxId:number = 0;
+        this.korisnikPodaci.find(korisnik=> korisnik.email == email).adrese.forEach(adresa=>{
+            if(maxId < adresa.id){
+                maxId = adresa.id;
+            }
+        });
+        return ++maxId;
+    }
+
     izbrisiAdresu(email:string, adresaId: number):void{
         let adrese = this.korisnikPodaci.find(korisnik => korisnik.email == email).adrese;
         let index = adrese.indexOf(

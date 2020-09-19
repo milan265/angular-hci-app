@@ -38,11 +38,7 @@ export class AdreseComponent implements OnInit {
   }
 
   dodajNovuAdresu():void{
-    const dialogConfig = new MatDialogConfig();
- 
-    dialogConfig.width = '60%';
-    dialogConfig.height = '85%';
-    this.dialog.open(DialogDodajComponent,dialogConfig);
+    this.dialog.open(DialogDodajComponent);
   }
 
   izbrisiAdresu(adresa: Adresa):void{
