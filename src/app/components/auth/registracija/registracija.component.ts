@@ -60,7 +60,6 @@ export class RegistracijaComponent implements OnInit {
       this.cookieService.set("ulogovan","true");
       this.cookieService.set("email",email);
       this.cookieService.set("prijavljenKorisnikIme",this.korisnikService.getImeByEmail(email));
-      this.cookieService.set("neocenjeneNarudzbine","");
       this.router.navigate(['']);
       this.snackBar.open("Uspešno ste se registrovali");
     }else{

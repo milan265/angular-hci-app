@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { Router, NavigationStart } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
+import { NarudzbinaService } from './services/narudzbina.service';
+import { KorisnikService } from './services/korisnik.service';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +21,8 @@ export class AppComponent implements OnInit {
   prijavljenKorisnikIme: string;
 
 
-  constructor(private cookieService: CookieService, private router: Router, private snackBar:MatSnackBar){}
+  constructor(private cookieService: CookieService, private router: Router, private snackBar:MatSnackBar,
+              private narudzbinaService: NarudzbinaService, private korisnikService: KorisnikService){}
 
 
   //cookie se koristi kad se stranica reload-uje
@@ -52,6 +55,12 @@ export class AppComponent implements OnInit {
   }
 
   neocenjeneNarudzbine(){
+    let brNeocenjenih = this.narudzbinaService.getBrojNeocenjenihNarudzbinaByKorisnikId(this.korisnikService.getIdByEmail(this.cookieService.get("email")));
+    if(brNeocenjenih>0){
+      this.cookieService.set("neocenjeneNarudzbine",brNeocenjenih.toString());
+    }else{
+      this.cookieService.set("neocenjeneNarudzbine", "");
+    }
     return this.cookieService.get("neocenjeneNarudzbine");
   }
 
