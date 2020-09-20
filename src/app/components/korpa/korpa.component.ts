@@ -32,7 +32,6 @@ export class KorpaComponent implements OnInit {
   ngOnInit() {
     if(this.cookieService.check("korpa")){
       this.sadrzajKorpe = JSON.parse(this.cookieService.get("korpa"));
-      console.log(this.sadrzajKorpe);
       if(this.sadrzajKorpe.length>0){
         this.restorani = this.sadrzajKorpe.map(obrok=>obrok.restoran).filter((v,i,a)=>a.indexOf(v)===i);
         this.selected = this.restorani[0];
