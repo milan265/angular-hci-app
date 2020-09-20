@@ -47,3 +47,12 @@ mat-card{
 #naziv-obroka{
     font-weight: bold;
 }
+
+.dodaci{
+    font-style: italic;
+    font-size: 13px;
+}
+
+#komentar{
+    width: 100%;
+}

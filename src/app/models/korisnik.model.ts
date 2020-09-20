@@ -1,5 +1,4 @@
 import { Adresa } from './adresa.model';
-import { Narudzbina } from './narudzbina.model';
 import { Utisak } from './utisak.model';
 
 export interface Korisnik{
@@ -11,7 +10,7 @@ export interface Korisnik{
     telefon: string;
     datumRegistrovanja: Date;
     adrese: Array<Adresa>;
-    narudzbine?: Array<Narudzbina>;
+    narudzbine?: Array<number>;
     omiljeniRestorani?: Array<number>;
     omiljenaHrana?: Array<number>;
     utisci?: Array<Utisak>;

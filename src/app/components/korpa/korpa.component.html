@@ -5,6 +5,7 @@
         <div id="korpa-sadrzaj" fxFlex="50">
             <div fxLayoutAlign="center center">
                 <mat-form-field>
+                    <mat-label>Izaberite restoran</mat-label>
                     <mat-select [(value)]="selected" (selectionChange)="promeniRestoran()">
                         <mat-option *ngFor="let restoran of restorani" [value]="restoran">
                             {{getNazivByRestoranId(restoran)}}
@@ -23,16 +24,25 @@
                         <mat-card-content fxLayout="column">
                             <div fxLayout="column" fxLayoutGap="5px">
                                 <span id='naziv-obroka'>{{getNazivObrokById(obrok.obrok)}} x {{obrok.kolicina}}</span>
-                                <span class='opis-obroka'>{{obrok.dodaci}}</span>
+                                <span class="dodaci">
+                                    <span *ngFor="let dodatak of obrok.dodaci; let i=index">
+                                        {{getNazivDodatkaById(dodatak)}}<span *ngIf="(i+1)<obrok.dodaci.length">,</span>
+                                    </span>
+                                </span>
                                 <span>{{obrok.dodatniZahtevi}}</span>
-                                <span></span>
                                 <span>{{obrok.cena}},00 RSD</span>
                             </div>
                             <div fxLayoutAlign="end center">
-                                <button mat-raised-button color="warn" (click)="izbrisiObrok(i,obrok.obrok)">Uklonite obrok iz korpe</button>
+                                <button mat-raised-button color="warn" (click)="izbrisiObrok(obrok.index)">Uklonite obrok iz korpe</button>
                             </div>                              
                         </mat-card-content>
                     </mat-card>
+                </div>
+
+                <div>
+                    <mat-form-field id="komentar">
+                        <textarea [(ngModel)]="komentar" matInput placeholder="Dodatni zahtevi"></textarea>
+                    </mat-form-field>
                 </div>
 
                 <div id="racun" fxLayoutAlign="end center">

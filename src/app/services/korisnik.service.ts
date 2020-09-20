@@ -124,6 +124,10 @@ export class KorisnikService {
         return this.korisnikPodaci.find(korisnik => korisnik.email == email);
     }
 
+    getIdByEmail(email: string): number{
+        return this.korisnikPodaci.find(korisnik=>korisnik.email==email).id;
+    }
+
     getImeByEmail(email: string):string{
         return this.korisnikPodaci.find(korisnik => korisnik.email == email).ime;
     }
@@ -170,6 +174,14 @@ export class KorisnikService {
 
     getAdreseByEmail(email:string):Array<Adresa>{
         return this.korisnikPodaci.find(korisnik=>korisnik.email == email).adrese;
+    }
+
+    getNarudzbineByEmail(email:string):Array<number>{
+        return this.korisnikPodaci.find(korisnik=>korisnik.email==email).narudzbine;
+    }
+
+    dodajNarudzbinuById(id:number, narudzbina:number):void{
+        this.korisnikPodaci.find(korisnik=>korisnik.id==id).narudzbine.push(narudzbina);
     }
 
     promeniIme(email:string, novoIme:string):void{

@@ -5,4 +5,6 @@ export interface Narudzbina{
     datum: Date;
     iznos: number;
     komentar: string;
+    sifra: string;
+    korisnik: number;
 }

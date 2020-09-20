@@ -113,7 +113,17 @@ export class DodavanjePrilogaComponent implements OnInit {
     }
     let restoranId: number = this.restoranService.getRestoranIdByObrokId(this.podaci.obrok.id);
     
+    let i = 0;
+    let cookieKorpa = []
+    if(this.cookieService.check("korpa")){
+      cookieKorpa = JSON.parse(this.cookieService.get("korpa"));
+      if(cookieKorpa.length>0){
+        i = cookieKorpa[cookieKorpa.length-1].index + 1;
+      }
+    }
+
     let sadrzajKorpe = {
+      index: i,
       restoran: restoranId,
       obrok: this.podaci.obrok.id,
       dodaci:this.izabraniPrilozi,
@@ -121,10 +131,8 @@ export class DodavanjePrilogaComponent implements OnInit {
       cena: this.ukupnaCena,
       dodatniZahtevi:this.dodatniZahtevi
     };
-    let cookieKorpa = []
-    if(this.cookieService.check("korpa")){
-      cookieKorpa = JSON.parse(this.cookieService.get("korpa"));
-    }
+    
+    
     cookieKorpa.push(sadrzajKorpe);
     this.cookieService.set("korpa",JSON.stringify(cookieKorpa));
     this.snackBar.open("Uspešno ste dodali proizvod u korpu");
