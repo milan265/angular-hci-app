@@ -14,7 +14,10 @@ import { MatButtonModule,
         MatCardModule,
         MatAutocompleteModule, 
         MatRadioModule, 
-        MatTabsModule} from '@angular/material'
+        MatTabsModule, 
+        MatTableModule, 
+        MatSortModule, 
+        MatPaginatorModule, MatBadgeModule} from '@angular/material'
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule ({
@@ -35,7 +38,11 @@ import { ReactiveFormsModule } from '@angular/forms';
         MatDialogModule,
         MatRadioModule,
         MatCheckboxModule,
-        MatTabsModule
+        MatTabsModule,
+        MatTableModule,
+        MatSortModule,
+        MatPaginatorModule,
+        MatBadgeModule
     ],
     exports:[
         MatButtonModule,
@@ -56,7 +63,11 @@ import { ReactiveFormsModule } from '@angular/forms';
         MatDialogModule,
         MatRadioModule,
         MatCheckboxModule,
-        MatTabsModule
+        MatTabsModule,
+        MatTableModule,
+        MatSortModule,
+        MatPaginatorModule,
+        MatBadgeModule
     ]
 })
 

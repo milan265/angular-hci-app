@@ -42,42 +42,42 @@ export class KorisnikService {
                     ocena: 4,
                     komentar: "Hrana je ukusna",
                     korisnik: 1,
-                    vreme: "17-Sep-2020",
+                    vreme: new Date(2020,8,17),
                     restoran: 2
                 },
                 {
                     ocena: 5,
                     komentar: "Hrana je ukusna",
                     korisnik: 1,
-                    vreme: "17-Sep-2020",
+                    vreme: new Date(2020,8,17),
                     restoran: 2
                 },
                 {
                     ocena: 5,
                     komentar: "",
                     korisnik: 1,
-                    vreme: "17-Sep-2020",
+                    vreme: new Date(2020,8,18),
                     restoran: 2
                 },
                 {
                     ocena: 4,
                     komentar: "Hrana je ukusna",
                     korisnik: 1,
-                    vreme: "17-Sep-2020",
+                    vreme: new Date(2020,8,19),
                     restoran: 2
                 },
                 {
                     ocena: 5,
                     komentar: "Hrana je ukusna",
                     korisnik: 1,
-                    vreme: "17-Sep-2020",
+                    vreme: new Date(2020,8,19),
                     restoran: 2
                 },
                 {
                     ocena: 5,
                     komentar: "",
                     korisnik: 1,
-                    vreme: "17-Sep-2020",
+                    vreme: new Date(2020,8,19),
                     restoran: 2
                 }
             ]
@@ -245,6 +245,10 @@ export class KorisnikService {
         }
     }
 
+    getPrimarnaAdresaByEmail(email:string):Adresa{
+        return this.korisnikPodaci.find(korisnik => korisnik.email == email).adrese[0];
+    }
+
     postaviKaoPrimarnu(email:string, adresaId: number):void{
         let adrese = this.korisnikPodaci.find(korisnik => korisnik.email == email).adrese;
         adrese.forEach(adresa=>{
@@ -261,6 +265,17 @@ export class KorisnikService {
                 return -1;
             }
         });
+    }
+
+    dodajUtisak(korisnikId:number, restoranId: number, ocena:number, komentar:string):void{
+        let utisak: Utisak = {
+            komentar: komentar,
+            korisnik: korisnikId,
+            ocena: ocena,
+            restoran: restoranId,
+            vreme: new Date()
+        };
+        this.korisnikPodaci.find(korisnik => korisnik.id == korisnikId).utisci.push(utisak);
     }
 
     registrujKorisnika(ime:string, prezime:string, email:string, lozinka:string, telefon:string, grad:string, region:string, ulica:string, broj:string, brojStana:string):void{

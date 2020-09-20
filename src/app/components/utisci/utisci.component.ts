@@ -23,6 +23,13 @@ export class UtisciComponent implements OnInit {
     this.titleService.setTitle("Utisci");
     this.email = this.cookieService.get("email");
     this.utisci = this.korisnikService.getUtisciByEmail(this.email);
+    this.utisci.sort((a,b)=>{
+      if(a.vreme<b.vreme){
+        return 1;
+      }else{
+        return -1;
+      }
+    });
     this.nemaUtisaka = this.utisci.length==0? true: false;
   }
 

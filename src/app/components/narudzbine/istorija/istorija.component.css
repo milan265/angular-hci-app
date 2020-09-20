@@ -1,0 +1,19 @@
+#tabela{
+    margin-top:5px;
+}
+
+.racun{
+    padding-left: 10px;
+}
+#prazna-tabela{
+    height: 468px;
+    width: 626px;
+    padding: 0px 50px;
+    background-image: url("../../../../assets/slike/food-background.png");
+}
+
+#prazna-tabela p{
+    font-size: 22px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+}

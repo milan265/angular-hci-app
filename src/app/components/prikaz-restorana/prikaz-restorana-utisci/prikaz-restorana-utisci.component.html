@@ -9,7 +9,7 @@
                         <div fxLayout="row" fxLayoutAlign="space-between center">
                             <div fxLayout="row" fxLayoutGap="15px">
                                 <span id="ime">{{getImeById(utisak.korisnik)}}</span>
-                                <span id="vreme">{{utisak.vreme}}</span>
+                                <span id="vreme">{{utisak.vreme.toLocaleDateString()}}</span>
                             </div>
                             <span> 
                                 <bar-rating [rate]="utisak.ocena" [readOnly]="true" [max]="5" theme="fontawesome"></bar-rating>

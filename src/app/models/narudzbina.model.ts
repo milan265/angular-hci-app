@@ -1,10 +1,13 @@
+import { Korpa } from './korpa.model';
+
 export interface Narudzbina{
     id: number;
-    restoran: number;//id restorana
-    obroci: Array<number>;
+    restoranId: number;
+    korpa: Array<Korpa>;
     datum: Date;
-    iznos: number;
     komentar: string;
     sifra: string;
     korisnik: number;
+    tip: "aktivna"|"otkazana"|"zavrsena";
+    ocenjena: boolean;
 }

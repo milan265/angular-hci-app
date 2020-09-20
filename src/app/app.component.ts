@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   greska404: boolean = false;
   ulogovan: boolean = false;
   kolacici: boolean = false;
+
   ruteNijePrijavljen: Array<string> = ["/","/registracija","/prijava","/uslovi-koriscenja","/prikaz-restorana"];  
   rutePrijavljen: Array<string> = ["/","/profil","/narudzbine","/omiljena-hrana","/omiljeni-restorani",
                                   "/adrese","/utisci","/uslovi-koriscenja","/prikaz-restorana","/korpa"];
@@ -50,6 +51,10 @@ export class AppComponent implements OnInit {
     }
   }
 
+  neocenjeneNarudzbine(){
+    return this.cookieService.get("neocenjeneNarudzbine");
+  }
+
   odjaviSe():void{
     this.prijavljenKorisnikIme = "";
     this.ulogovan = false;
@@ -57,6 +62,7 @@ export class AppComponent implements OnInit {
     this.cookieService.set("email","");
     this.cookieService.set("prijavljenKorisnikIme","");
     this.cookieService.set("korpa","[]");
+    this.cookieService.set('neocenjeneNarudzbine',"");
     this.snackBar.open("Odjavili ste se");
   }
 

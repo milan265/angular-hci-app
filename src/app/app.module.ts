@@ -41,6 +41,8 @@ import { DialogPrimarnaComponent } from './components/adrese/dialog-primarna/dia
 import { DialogIzbrisiComponent } from './components/adrese/dialog-izbrisi/dialog-izbrisi.component';
 import { DialogDodajComponent } from './components/adrese/dialog-dodaj/dialog-dodaj.component';
 import { DialogIzbrisiKorpaComponent } from './components/korpa/dialog-izbrisi-korpa/dialog-izbrisi-korpa.component';
+import { DialogOtkaziComponent } from './components/narudzbine/aktivne/dialog-otkazi/dialog-otkazi.component';
+import { DialogOceniNarudzbinuComponent } from './components/narudzbine/istorija/dialog-oceni-narudzbinu/dialog-oceni-narudzbinu.component';
 
 
 @NgModule({
@@ -69,7 +71,9 @@ import { DialogIzbrisiKorpaComponent } from './components/korpa/dialog-izbrisi-k
     DialogPrimarnaComponent,
     DialogIzbrisiComponent,
     DialogDodajComponent,
-    DialogIzbrisiKorpaComponent
+    DialogIzbrisiKorpaComponent,
+    DialogOtkaziComponent,
+    DialogOceniNarudzbinuComponent
   ],
   imports: [
     BrowserModule,
@@ -97,7 +101,9 @@ import { DialogIzbrisiKorpaComponent } from './components/korpa/dialog-izbrisi-k
     DialogPrimarnaComponent,
     DialogIzbrisiComponent,
     DialogDodajComponent,
-    DialogIzbrisiKorpaComponent
+    DialogIzbrisiKorpaComponent,
+    DialogOtkaziComponent,
+    DialogOceniNarudzbinuComponent
   ]
 })
 export class AppModule { }

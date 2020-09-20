@@ -23,6 +23,13 @@ export class PrikazRestoranaUtisciComponent implements OnInit {
   ngOnInit() {
     this.restoranId = Number(this.cookieService.get("restoran_id"));
     this.utisci = this.restoranService.getUtisciById(this.restoranId);
+    this.utisci.sort((a,b)=>{
+      if(a.vreme<b.vreme){
+        return 1;
+      }else{
+        return -1;
+      }
+    });
     this.nemaUtisaka = this.utisci.length==0? true: false;
     this.restoranNaziv = this.restoranService.getRestoranNazivById(this.restoranId);
   }

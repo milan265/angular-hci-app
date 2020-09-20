@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatSnackBar } from '@angular/material';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { Adresa } from 'src/app/models/adresa.model';
+import { Korpa } from 'src/app/models/korpa.model';
 import { DodatakObrokuService } from 'src/app/services/dodatakObroku.service';
 import { KorisnikService } from 'src/app/services/korisnik.service';
 import { NarudzbinaService } from 'src/app/services/narudzbina.service';
@@ -23,6 +25,7 @@ export class KorpaComponent implements OnInit {
   racun: number = 0;
   obroci = [];
   komentar: string = "";
+  adresa: string = "";
 
   constructor(private cookieService: CookieService, private restoranService: RestoranService,
               private router: Router, private dialog: MatDialog, private snackBar: MatSnackBar,
@@ -35,6 +38,10 @@ export class KorpaComponent implements OnInit {
       if(this.sadrzajKorpe.length>0){
         this.restorani = this.sadrzajKorpe.map(obrok=>obrok.restoran).filter((v,i,a)=>a.indexOf(v)===i);
         this.selected = this.restorani[0];
+        let adr:Adresa = this.korisnikService.getPrimarnaAdresaByEmail(this.cookieService.get('email'));
+        if(adr!=undefined){
+          this.adresa = adr.grad + ", " + adr.ulica + " " + adr.broj;
+        }
         this.promeniRestoran();
       }
     }
@@ -63,7 +70,8 @@ export class KorpaComponent implements OnInit {
     this.obroci = this.sadrzajKorpe.filter(e=>e.restoran==this.selected);
     this.obroci.forEach(obrok => this.racun += obrok.cena);
     this.minNarudzbina = this.restoranService.getMinCenaNarudzbineById(this.selected)-this.racun;
-    this.dugmeNaruci = this.minNarudzbina>0 ? false:true;    
+    this.dugmeNaruci = this.minNarudzbina<0 && this.adresa!=""? true:false;
+    //console.log(this.obroci);
   }
 
   obrisiNarudzbinu(){//otvara dialog
@@ -121,7 +129,15 @@ export class KorpaComponent implements OnInit {
 
   naruci():void{
     let korisnikId:number = this.korisnikService.getIdByEmail(this.cookieService.get("email"));
-    this.narudzbinaService.dodajNarudzbinu(this.selected, this.obroci,this.racun,this.komentar,korisnikId);
+    let korpa: Array<Korpa> = [];
+    this.obroci.forEach(e=>korpa.push({
+      obrokId: e.obrok,
+      cena: e.cena,
+      dodaci: e.dodaci,
+      kolicina: e.kolicina,
+      dodatniZahtevi: e.dodatniZahtevi
+    }));
+    this.narudzbinaService.dodajNarudzbinu(korpa, this.selected,this.komentar,korisnikId);
 
     this.ukloniNarudzbinu();
     this.promeniRestoran();

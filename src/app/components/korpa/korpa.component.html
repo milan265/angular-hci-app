@@ -45,11 +45,17 @@
                     </mat-form-field>
                 </div>
 
-                <div id="racun" fxLayoutAlign="end center">
-                    <span>Račun <span id="racun-cena">{{racun}},00RSD</span></span>
+                <div fxLayout="column" fxLayoutAlign="center end" fxLayoutGap="10px">
+                    <span *ngIf="adresa!=''">Adresa: <span class="racun-cena">{{adresa}}</span></span>
+                    <span *ngIf="adresa==''" class="poruka-greska">Nemate izabranu adresu</span>
+                    <button *ngIf="adresa==''" mat-raised-button color="warn" routerLink="/adrese">Dodaj adresu</button>
                 </div>
 
-                <div id="poruka" *ngIf="!dugmeNaruci" fxLayoutAlign="center center">
+                <div id="racun" fxLayoutAlign="end center">
+                    <span>Račun <span class="racun-cena">{{racun}},00RSD</span></span>
+                </div>
+
+                <div id="poruka" *ngIf="minNarudzbina>0" fxLayoutAlign="center center">
                     <span>{{minNarudzbina}},00RSD nedostaje za minimalnu narudžbinu</span>
                 </div>
 

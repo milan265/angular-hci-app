@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { AppComponent } from 'src/app/app.component';
 import { MatSnackBar, MatDialog } from '@angular/material';
 import { ZaboravljenaLozinkaComponent } from './zaboravljena-lozinka/zaboravljena-lozinka.component';
+import { NarudzbinaService } from 'src/app/services/narudzbina.service';
 
 @Component({
   selector: 'app-prijava',
@@ -24,7 +25,7 @@ export class PrijavaComponent implements OnInit {
 
   constructor(private titleService: Title, private korisnikService: KorisnikService,
             private cookieService: CookieService, private router:Router, private appComponent: AppComponent,
-            private snackBar: MatSnackBar, private dialog: MatDialog) { }
+            private snackBar: MatSnackBar, private dialog: MatDialog, private narudzbinaService: NarudzbinaService) { }
 
   ngOnInit() {
     this.titleService.setTitle("Prijava");
@@ -44,6 +45,13 @@ export class PrijavaComponent implements OnInit {
     this.cookieService.set("ulogovan","true");
     this.cookieService.set("email",email);
     this.cookieService.set("prijavljenKorisnikIme",this.korisnikService.getImeByEmail(email));
+    let brNeocenjenih = this.narudzbinaService.getBrojNeocenjenihNarudzbinaByKorisnikId(this.korisnikService.getIdByEmail(email));
+    if(brNeocenjenih>0){
+      this.cookieService.set("neocenjeneNarudzbine",brNeocenjenih.toString());
+    }else{
+      this.cookieService.set("neocenjeneNarudzbine", "");
+    }
+   
     this.router.navigate(['']);
     this.snackBar.open("Prijavljeni ste");
   }

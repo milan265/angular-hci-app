@@ -36,7 +36,7 @@ mat-card{
 #racun{
     font-weight: bold;
 }
-#racun-cena{
+.racun-cena{
     margin-left: 5px;
 }
 
@@ -55,4 +55,9 @@ mat-card{
 
 #komentar{
     width: 100%;
+}
+
+.poruka-greska{
+    font-size: 14px;
+    color:red;
 }

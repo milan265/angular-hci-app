@@ -1,0 +1,16 @@
+<section fxLayout="column">
+    <h1 mat-dialog-title>Koliko ste zadovoljni hranom iz restorana?</h1>
+    <div fxLayoutAlign="center center"> 
+        <bar-rating [(rate)]="ocena"[max]="5" theme="stars"></bar-rating>
+    </div>
+    <div>
+        <mat-form-field id="komentar">
+            <textarea [(ngModel)]="komentar" matInput placeholder="Utisak o restoranu"></textarea>
+        </mat-form-field>
+    </div>
+    <mat-dialog-actions fxLayout="row" fxFlexAlign="end" fxLayoutGap="15px">
+        <button mat-raised-button color="primary" [mat-dialog-close]="false">Odustani</button>
+        <button *ngIf="dugmeOceni()" mat-raised-button color="warn" [mat-dialog-close]="true" (click)="oceni()">Oceni</button>
+        <button *ngIf="!dugmeOceni()" mat-raised-button disabled>Oceni</button>
+    </mat-dialog-actions>
+</section>

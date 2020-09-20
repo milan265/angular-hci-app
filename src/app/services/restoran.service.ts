@@ -48,42 +48,42 @@ export class RestoranService {
                     ocena: 4,
                     komentar: "Hrana je ukusna",
                     korisnik: 1,
-                    vreme: "17-Sep-2020",
+                    vreme: new Date(2020,8,17),
                     restoran: 2
                 },
                 {
                     ocena: 5,
                     komentar: "Hrana je ukusna",
                     korisnik: 1,
-                    vreme: "17-Sep-2020",
+                    vreme: new Date(2020,8,17),
                     restoran: 2
                 },
                 {
                     ocena: 5,
                     komentar: "",
                     korisnik: 1,
-                    vreme: "17-Sep-2020",
+                    vreme: new Date(2020,8,18),
                     restoran: 2
                 },
                 {
                     ocena: 4,
                     komentar: "Hrana je ukusna",
                     korisnik: 1,
-                    vreme: "17-Sep-2020",
+                    vreme: new Date(2020,8,19),
                     restoran: 2
                 },
                 {
                     ocena: 5,
                     komentar: "Hrana je ukusna",
                     korisnik: 1,
-                    vreme: "17-Sep-2020",
+                    vreme: new Date(2020,8,19),
                     restoran: 2
                 },
                 {
                     ocena: 5,
                     komentar: "",
                     korisnik: 1,
-                    vreme: "17-Sep-2020",
+                    vreme: new Date(2020,8,19),
                     restoran: 2
                 }
             ],
@@ -341,5 +341,16 @@ export class RestoranService {
 
     getMinCenaNarudzbineById(id:number):number{
         return this.restoranPodaci.find(restoran => restoran.id == id).minCenaNarudzbine;
+    }
+
+    dodajUtisak(korisnikId:number, restoranId: number, ocena:number, komentar:string):void{
+        let utisak: Utisak = {
+            komentar: komentar,
+            korisnik: korisnikId,
+            ocena: ocena,
+            restoran: restoranId,
+            vreme: new Date()
+        };
+        this.restoranPodaci.find(restoran => restoran.id == restoranId).utisci.push(utisak);
     }
 }

@@ -2,6 +2,6 @@ export interface Utisak{
     ocena: number;
     komentar: string;
     korisnik: number;
-    vreme: string;
+    vreme: Date;
     restoran: number;
 }
