@@ -88,13 +88,13 @@ export class PretragaComponent implements OnInit {
       if(j==i){
         if(!this.check[i]){
           t = false;
-          let restoraniZaKategoriju = this.restoranService.getRestoraniByTag(this.kategorije[i]);
+          let restoraniZaKategoriju = this.restoranService.getRestoraniByTag(this.kategorije[j]);
           restoraniZaKategoriju.forEach(restoran=>this.restorani.push(restoran));
         }
       }else{
         if(this.check[j]){
           t = false;
-          let restoraniZaKategoriju = this.restoranService.getRestoraniByTag(this.kategorije[i]);
+          let restoraniZaKategoriju = this.restoranService.getRestoraniByTag(this.kategorije[j]);
           restoraniZaKategoriju.forEach(restoran=>this.restorani.push(restoran));
         }
       }
