@@ -1,50 +1,53 @@
 <section class="mainHeight" fxLayout="column">
-    <div fxLayoutAlign="center center">
-        <form id="form-pretraga">
-            <mat-form-field>
-                <input matInput (keyup)="pretragaRestorana($event)" type="text" placeholder="Pretražite restorane">
-            </mat-form-field>
-            <div class="prikaz-restorana-pretraga" *ngIf="restoraniPretraga!=undefined">
-                <div class="pretraga-sadrzaj" *ngFor="let restoran of restoraniPretraga" (click)="prikaziRestoran(restoran.id)">
-                    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px">
-                        <img src="{{restoran.logo}}" alt="logo">
-                        <span>{{restoran.naziv}}</span>
+    <div class="omiljeni-sadrzaj" *ngIf="imaOmiljenih" fxLayoutGap="50px">
+        <div  fxLayoutAlign="center center">
+            <form id="form-pretraga">
+                <mat-form-field>
+                    <input matInput (keyup)="pretragaRestorana($event)" type="text" placeholder="Pretražite restorane">
+                </mat-form-field>
+                <div class="prikaz-restorana-pretraga" *ngIf="restoraniPretraga!=undefined">
+                    <div class="pretraga-sadrzaj" *ngFor="let restoran of restoraniPretraga" (click)="prikaziRestoran(restoran.id)">
+                        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px">
+                            <img src="{{restoran.logo}}" alt="logo">
+                            <span>{{restoran.naziv}}</span>
+                        </div>
                     </div>
+                    <div class="nema-trazenog-restorana" *ngIf="restoraniPretraga!=undefined && restoraniPretraga.length==0">
+                      <span>Nema traženog restorana</span>
+                    </div> 
                 </div>
-                <div class="nema-trazenog-restorana" *ngIf="restoraniPretraga!=undefined && restoraniPretraga.length==0">
-                  <span>Nema traženog restorana</span>
+            </form>
+        </div>
+        <div id="ima-restorana" fxLayout="row">
+            <div fxFlex="25" fxLayout="column">
+            </div>
+            <div class="restorani" fxFlex="50">
+                <div class="pointer" *ngFor="let restoran of restorani" fxLayout="column" (click)="prikaziRestoran(restoran.id)">
+                    <mat-card>
+                        <mat-card-content fxLayout="row" fxLayoutGap="20px">
+                            <div id="logo" fxFlex="20">
+                                <img src="{{restoran.logo}}" alt="logo">
+                            </div>
+                            <div fxFlex="60" fxLayout="column" fxLayoutAlign="space-between start">
+                                <span class="naziv">{{restoran.naziv}}</span>
+                                <span class="opis">{{restoran.adrese[0].ulica}} {{restoran.adrese[0].broj}}, {{restoran.adrese[0].grad}}</span>
+                                <span> 
+                                    <bar-rating [rate]="getOcena(restoran.id)" [readOnly]="true" [max]="5" theme="fontawesome"></bar-rating>
+                                </span>
+                            </div>
+                            <div fxFlex="20" fxLayout="column" fxLayoutGap="10px">
+                                <span class="naziv">Minimalna cena narudžbine</span>
+                                <span>{{restoran.minCenaNarudzbine}} RSD</span>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
                 </div> 
             </div>
-        </form>
-    </div>
-    <div id="ima-restorana" *ngIf="imaOmiljenih" fxLayout="row">
-        <div fxFlex="25" fxLayout="column">
-        </div>
-        <div class="restorani" fxFlex="50">
-            <div class="pointer" *ngFor="let restoran of restorani" fxLayout="column" (click)="prikaziRestoran(restoran.id)">
-                <mat-card>
-                    <mat-card-content fxLayout="row" fxLayoutGap="20px">
-                        <div id="logo" fxFlex="20">
-                            <img src="{{restoran.logo}}" alt="logo">
-                        </div>
-                        <div fxFlex="60" fxLayout="column" fxLayoutAlign="space-between start">
-                            <span class="naziv">{{restoran.naziv}}</span>
-                            <span class="opis">{{restoran.adrese[0].ulica}} {{restoran.adrese[0].broj}}, {{restoran.adrese[0].grad}}</span>
-                            <span> 
-                                <bar-rating [rate]="getOcena(restoran.id)" [readOnly]="true" [max]="5" theme="fontawesome"></bar-rating>
-                            </span>
-                        </div>
-                        <div fxFlex="20" fxLayout="column" fxLayoutGap="10px">
-                            <span class="naziv">Minimalna cena narudžbine</span>
-                            <span>{{restoran.minCenaNarudzbine}} RSD</span>
-                        </div>
-                    </mat-card-content>
-                </mat-card>
-            </div> 
-        </div>
-        <div fxFlex="25" fxLayout="column">
+            <div fxFlex="25" fxLayout="column">
+            </div>
         </div>
     </div>
+    
     <div *ngIf="!imaOmiljenih" fxLayoutAlign="center center">
         <div id="nemaOmiljene" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="50px">
             <p>Trenutno Vaša lista omiljenih restorana je prazna</p>  
