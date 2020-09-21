@@ -1,16 +1,16 @@
-#sadrzaj-adrese{
+#ima-restorana{
     margin-top: 100px;
 }
-.adrese{
+.restorani{
     padding: 30px;
     background-color: #f7f7f7;
 }
 
-#grad{
+.naziv{
     font-weight: bold;
 }
 
-#region{
+.opis{
     font-style: italic;
     font-size: 13px;
 }
@@ -30,4 +30,15 @@ mat-card{
     font-size: 22px;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.5);
+}
+
+#logo{
+    width: 90px;
+}
+#logo img{
+    width: 100%;
+}
+
+.pointer{
+    cursor: pointer;
 }

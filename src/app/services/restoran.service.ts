@@ -153,7 +153,7 @@ export class RestoranService {
             adrese:[{
                 grad: "Beograd",
                 region: "Savski venac",
-                ulica: "",
+                ulica: "Online naručivanje",
                 broj: ""}],
             opis: "",
             logo: "../../assets/slike/restorani/big-pizza/logo.png",
@@ -192,7 +192,7 @@ export class RestoranService {
             adrese:[{
                 grad: "Beograd",
                 region: "Dušanovac",
-                ulica: "",
+                ulica: "Online naručivanje",
                 broj: ""}],
             opis: "",
             logo: "../../assets/slike/restorani/napoli/logo.png",

@@ -3,19 +3,23 @@
         <div fxFlex="25" fxLayout="column">
         </div>
         <div class="restorani" fxFlex="50">
-            <div *ngFor="let restoran of restorani" fxLayout="column">
+            <div class="pointer" *ngFor="let restoran of restorani" fxLayout="column" (click)="prikaziRestoran(restoran.id)">
                 <mat-card>
-                    <mat-card-content fxLayout="column" fxLayoutGap="10px">
-                        <div fxLayout="row" fxLayoutAlign="space-between center">
-                            <div fxLayout="row" fxLayoutGap="15px">
-                                <span id="ime">{{getNazivRestoranaById(utisak.restoran)}}</span>
-                                <span id="vreme">{{utisak.vreme}}</span>
-                            </div>
+                    <mat-card-content fxLayout="row" fxLayoutGap="20px">
+                        <div id="logo" fxFlex="20">
+                            <img src="{{restoran.logo}}" alt="logo">
+                        </div>
+                        <div fxFlex="60" fxLayout="column" fxLayoutAlign="space-between start">
+                            <span class="naziv">{{restoran.naziv}}</span>
+                            <span class="opis">{{restoran.adrese[0].ulica}} {{restoran.adrese[0].broj}}, {{restoran.adrese[0].grad}}</span>
                             <span> 
-                                <bar-rating [rate]="utisak.ocena" [readOnly]="true" [max]="5" theme="fontawesome"></bar-rating>
+                                <bar-rating [rate]="getOcena(restoran.id)" [readOnly]="true" [max]="5" theme="fontawesome"></bar-rating>
                             </span>
                         </div>
-                        <p>{{utisak.komentar}}</p>
+                        <div fxFlex="20" fxLayout="column" fxLayoutGap="10px">
+                            <span class="naziv">Minimalna cena narudžbine</span>
+                            <span>{{restoran.minCenaNarudzbine}} RSD</span>
+                        </div>
                     </mat-card-content>
                 </mat-card>
             </div> 

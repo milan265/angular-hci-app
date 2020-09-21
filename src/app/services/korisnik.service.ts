@@ -153,7 +153,7 @@ export class KorisnikService {
         this.korisnikPodaci.find(korisnik => korisnik.email == email).omiljenaHrana.splice(index, 1);
     }
 
-    getOmiljenRestoran(email:string):Array<number>{
+    getOmiljeniRestorani(email:string):Array<number>{
         return this.korisnikPodaci.find(korisnik => korisnik.email == email).omiljeniRestorani;
     }
 
