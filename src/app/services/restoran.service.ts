@@ -22,9 +22,30 @@ export class RestoranService {
             obroci:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27],
             kategorije:["Roštilj","Piletina","Pohovano","Sendviči","Pomfrit","Palačinke","Piće"],
             tagovi:["rostilj","piletina","pohovano","sendvic","sendvici","pomfrit","slatke palacinke","palacinke","pice"],
-            ocena: 4.3,
             minCenaNarudzbine: 600,
-            utisci:[],
+            utisci:[
+                {
+                    ocena: 3,
+                    komentar: "Hrana je ukusna",
+                    korisnik: 1,
+                    vreme: new Date(2020,8,17),
+                    restoran: 1
+                },
+                {
+                    ocena: 5,
+                    komentar: "Hrana je ukusna",
+                    korisnik: 1,
+                    vreme: new Date(2020,8,17),
+                    restoran: 1
+                },
+                {
+                    ocena: 5,
+                    komentar: "",
+                    korisnik: 1,
+                    vreme: new Date(2020,8,18),
+                    restoran: 1
+                }
+            ],
             mapa: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2831.377755882947!2d20.493206914924144!3d44.793489585966675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a707e00f5901b%3A0xb3c6b2398fb294ac!2sGrill%2051!5e0!3m2!1sen!2srs!4v1600376622679!5m2!1sen!2srs" 
         },
         {
@@ -40,9 +61,7 @@ export class RestoranService {
             cover: "../../assets/slike/restorani/pile&prase/cover.png",
             obroci:[28,29,30,31,32,33,34,35,36,37,38,39],
             kategorije:["Roštilj","Palačinke","Ostalo","Piće"],
-            tagovi:["rostilj","sendvici","sendvic","slane palacinke","palacinke","slatke palacinke","pomfrit","pice"],
-            ocena: 4.6,
-            minCenaNarudzbine: 800 ,
+            tagovi:["rostilj","sendvici","sendvic","slane palacinke","palacinke","slatke palacinke","pomfrit","pice"],            minCenaNarudzbine: 800 ,
             utisci: [
                 {
                     ocena: 4,
@@ -103,9 +122,30 @@ export class RestoranService {
             obroci:[40,41,42,43,44,45,46,47,48,49,50,51,52,53,54],
             kategorije:["Roštilj","Salate","Pomfrit","Palačinke","Piće"],
             tagovi:["rostilj","salate","salata","pomfrit","palacinke","deserti","pice"],
-            ocena: 4.4,
             minCenaNarudzbine: 800,
-            utisci:[]  
+            utisci:[
+                {
+                    ocena: 4,
+                    komentar: "Hrana je ukusna",
+                    korisnik: 1,
+                    vreme: new Date(2020,8,17),
+                    restoran: 3
+                },
+                {
+                    ocena: 5,
+                    komentar: "Hrana je ukusna",
+                    korisnik: 1,
+                    vreme: new Date(2020,8,17),
+                    restoran: 3
+                },
+                {
+                    ocena: 5,
+                    komentar: "",
+                    korisnik: 1,
+                    vreme: new Date(2020,8,18),
+                    restoran: 3
+                }
+            ]  
         },
         {
             id: 4,
@@ -121,9 +161,30 @@ export class RestoranService {
             obroci:[55,56,57,58,59,60,61],
             kategorije:["Pica"],
             tagovi:["pica","pizza","italijanska"],
-            ocena: 4.2,
             minCenaNarudzbine: 600,
-            utisci:[]   
+            utisci:[
+                {
+                    ocena: 4,
+                    komentar: "Hrana je ukusna",
+                    korisnik: 1,
+                    vreme: new Date(2020,8,17),
+                    restoran: 4
+                },
+                {
+                    ocena: 5,
+                    komentar: "Hrana je ukusna",
+                    korisnik: 1,
+                    vreme: new Date(2020,8,17),
+                    restoran: 4
+                },
+                {
+                    ocena: 3,
+                    komentar: "",
+                    korisnik: 1,
+                    vreme: new Date(2020,8,18),
+                    restoran: 4
+                }
+            ]   
         },
         {
             id: 5,
@@ -139,9 +200,37 @@ export class RestoranService {
             obroci:[68,69,70,71],
             kategorije:["Pica"],
             tagovi:["pica","pizza","italijanska"],
-            ocena: 4.0,
             minCenaNarudzbine: 600,
-            utisci:[]   
+            utisci:[
+                {
+                    ocena: 2,
+                    komentar: "Hrana je ukusna",
+                    korisnik: 1,
+                    vreme: new Date(2020,8,17),
+                    restoran: 5
+                },
+                {
+                    ocena: 3,
+                    komentar: "",
+                    korisnik: 1,
+                    vreme: new Date(2020,8,18),
+                    restoran: 5
+                },
+                {
+                    ocena: 5,
+                    komentar: "Hrana je ukusna",
+                    korisnik: 1,
+                    vreme: new Date(2020,8,17),
+                    restoran: 5
+                },
+                {
+                    ocena: 3,
+                    komentar: "",
+                    korisnik: 1,
+                    vreme: new Date(2020,8,18),
+                    restoran: 5
+                }
+            ]   
         },
         {
             id: 6,
@@ -157,9 +246,23 @@ export class RestoranService {
             obroci:[62,63,64,65,66,67],
             kategorije:["Pica"],
             tagovi:["pica","pizza","italijanska"],
-            ocena: 4.5,
             minCenaNarudzbine: 700,
-            utisci:[]   
+            utisci:[
+                {
+                    ocena: 5,
+                    komentar: "Hrana je ukusna",
+                    korisnik: 1,
+                    vreme: new Date(2020,8,17),
+                    restoran: 6
+                },
+                {
+                    ocena: 3,
+                    komentar: "",
+                    korisnik: 1,
+                    vreme: new Date(2020,8,18),
+                    restoran: 6
+                }
+            ]   
         },
         {
             id: 7,
@@ -175,7 +278,6 @@ export class RestoranService {
             obroci:[72,73,74,75],
             kategorije:["Pica"],
             tagovi:["pica","pizza","italijanska","rostilj","sendvici","pohovano","palacinke"],
-            ocena: 4.0,
             minCenaNarudzbine: 600,
             utisci:[]   
         },
@@ -193,7 +295,6 @@ export class RestoranService {
             obroci:[76,77,78,79],
             kategorije:["Pica"],
             tagovi:["pica","pizza","italijanska","rostilj","sendvici","palacinke","slatke palacinke"],
-            ocena: 4.0,
             minCenaNarudzbine: 500,
             utisci:[]   
         },
@@ -211,9 +312,37 @@ export class RestoranService {
             obroci:[80,81,82,83,84],
             kategorije:["Burgeri junetina","Burgeri piletina", "Burger vegetarijanski"],
             tagovi:["burgeri"],
-            ocena: 4.7,
             minCenaNarudzbine: 900,
-            utisci:[]   
+            utisci:[
+                {
+                    ocena: 5,
+                    komentar: "Hrana je ukusna",
+                    korisnik: 1,
+                    vreme: new Date(2020,8,17),
+                    restoran: 9
+                },
+                {
+                    ocena: 5,
+                    komentar: "",
+                    korisnik: 1,
+                    vreme: new Date(2020,8,18),
+                    restoran: 9
+                },
+                {
+                    ocena: 5,
+                    komentar: "Hrana je ukusna",
+                    korisnik: 1,
+                    vreme: new Date(2020,8,17),
+                    restoran: 9
+                },
+                {
+                    ocena: 3,
+                    komentar: "",
+                    korisnik: 1,
+                    vreme: new Date(2020,8,18),
+                    restoran: 9
+                }
+            ]   
         },
         {
             id: 10,
@@ -229,9 +358,23 @@ export class RestoranService {
             obroci:[85,86,87,88,89,90,91,92,93,94,95,96,97,98],
             kategorije:["Mc Obrok","Burgeri","Pomfrit","Šejkovi"],
             tagovi:["obrok","burgeri","pomfrit","sejkovi"],
-            ocena: 4.1,
             minCenaNarudzbine: 600,
-            utisci:[]   
+            utisci:[
+                {
+                    ocena: 5,
+                    komentar: "Hrana je ukusna",
+                    korisnik: 1,
+                    vreme: new Date(2020,8,17),
+                    restoran: 10
+                },
+                {
+                    ocena: 4,
+                    komentar: "",
+                    korisnik: 1,
+                    vreme: new Date(2020,8,18),
+                    restoran: 10
+                }
+            ]   
         },
         {
             id: 11,
@@ -247,7 +390,6 @@ export class RestoranService {
             obroci:[111,112,113,114,115],
             kategorije:["Piletina","Svinjetina","Desert"],
             tagovi:["piletina","svinjetina","teletina","desert","kineska"],
-            ocena: 3.9,
             minCenaNarudzbine: 800,
             utisci:[]   
         },
@@ -265,9 +407,37 @@ export class RestoranService {
             obroci:[104,105,106,107,108,109,110],
             kategorije:["Piletina","Svinjetina","Teletina","Desert"],
             tagovi:["piletina","svinjetina","teletina","desert","kineska"],
-            ocena: 4.4,
             minCenaNarudzbine: 800,
-            utisci:[]   
+            utisci:[
+                {
+                    ocena: 5,
+                    komentar: "Hrana je ukusna",
+                    korisnik: 1,
+                    vreme: new Date(2020,8,17),
+                    restoran: 12
+                },
+                {
+                    ocena: 3,
+                    komentar: "",
+                    korisnik: 1,
+                    vreme: new Date(2020,8,18),
+                    restoran: 12
+                },
+                {
+                    ocena: 5,
+                    komentar: "Hrana je ukusna",
+                    korisnik: 1,
+                    vreme: new Date(2020,8,17),
+                    restoran: 12
+                },
+                {
+                    ocena: 4,
+                    komentar: "",
+                    korisnik: 1,
+                    vreme: new Date(2020,8,18),
+                    restoran: 12
+                }
+            ]   
         },
         {
             id: 13,
@@ -283,7 +453,6 @@ export class RestoranService {
             obroci:[99,100,101,102,103],
             kategorije:["Giros"],
             tagovi:["giros"],
-            ocena: 4.2,
             minCenaNarudzbine: 700,
             utisci:[]   
         }
@@ -324,7 +493,7 @@ export class RestoranService {
     }
 
     najboljiRestorani(n: number):Array<Restoran>{
-        return this.restoranPodaci.sort((r1,r2)=>r2.ocena-r1.ocena).slice(0,n);
+        return this.restoranPodaci.sort((r1,r2)=>parseFloat(this.getOcenaById(r2.id))-parseFloat(this.getOcenaById(r1.id))).slice(0,n);
     }
 
     getUtisciById(id:number):Array<Utisak>{
@@ -341,6 +510,13 @@ export class RestoranService {
 
     getMinCenaNarudzbineById(id:number):number{
         return this.restoranPodaci.find(restoran => restoran.id == id).minCenaNarudzbine;
+    }
+
+    getOcenaById(id):string{
+        let suma = 0;
+        let utisci = this.restoranPodaci.find(restoran=> restoran.id==id).utisci;
+        utisci.forEach(utisak => suma += utisak.ocena);
+        return (suma/utisci.length).toFixed(1);
     }
 
     dodajUtisak(korisnikId:number, restoranId: number, ocena:number, komentar:string):void{

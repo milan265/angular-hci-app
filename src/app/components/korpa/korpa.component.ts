@@ -33,16 +33,20 @@ export class KorpaComponent implements OnInit {
               private narudzbinaService: NarudzbinaService, private korisnikService: KorisnikService) { }
 
   ngOnInit() {
-    if(this.cookieService.check("korpa")){
-      this.sadrzajKorpe = JSON.parse(this.cookieService.get("korpa"));
-      if(this.sadrzajKorpe.length>0){
-        this.restorani = this.sadrzajKorpe.map(obrok=>obrok.restoran).filter((v,i,a)=>a.indexOf(v)===i);
-        this.selected = this.restorani[0];
-        let adr:Adresa = this.korisnikService.getPrimarnaAdresaByEmail(this.cookieService.get('email'));
-        if(adr!=undefined){
-          this.adresa = adr.grad + ", " + adr.ulica + " " + adr.broj;
+    if(this.cookieService.get("ulogovan")=="false"){
+      this.router.navigate(["404"]);
+    }else{
+      if(this.cookieService.check("korpa")){
+        this.sadrzajKorpe = JSON.parse(this.cookieService.get("korpa"));
+        if(this.sadrzajKorpe.length>0){
+          this.restorani = this.sadrzajKorpe.map(obrok=>obrok.restoran).filter((v,i,a)=>a.indexOf(v)===i);
+          this.selected = this.restorani[0];
+          let adr:Adresa = this.korisnikService.getPrimarnaAdresaByEmail(this.cookieService.get('email'));
+          if(adr!=undefined){
+            this.adresa = adr.grad + ", " + adr.ulica + " " + adr.broj;
+          }
+          this.promeniRestoran();
         }
-        this.promeniRestoran();
       }
     }
   }

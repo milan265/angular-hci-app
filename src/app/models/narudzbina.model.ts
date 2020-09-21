@@ -8,6 +8,6 @@ export interface Narudzbina{
     komentar: string;
     sifra: string;
     korisnik: number;
-    tip: "aktivna"|"otkazana"|"zavrsena";
+    tip: "aktivna"|"otkazana"|"završena";
     ocenjena: boolean;
 }

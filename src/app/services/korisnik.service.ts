@@ -35,7 +35,7 @@ export class KorisnikService {
                 }
             ],
             narudzbine: [],
-            omiljeniRestorani: [],
+            omiljeniRestorani: [1,2,3,4,5],
             omiljenaHrana: [55,1,2,3,10,13],
             utisci: [
                 {

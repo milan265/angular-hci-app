@@ -30,6 +30,7 @@ export class JelovnikComponent implements OnInit {
   omiljenRestoran: boolean = false;
   imaMapu:boolean = false;
   mapa: SafeResourceUrl;
+  minimalnaPorudzbina:number = 0;
 
   constructor(private titleService: Title, private cookieService: CookieService, 
               private restoranService: RestoranService, private obrokService: ObrokService,
@@ -47,6 +48,7 @@ export class JelovnikComponent implements OnInit {
     this.restoran.obroci.forEach(obrokId => this.obroci.push(this.obrokService.getObrokById(obrokId)));
     this.kategorije = this.restoran.kategorije;
     this.ulogovan = (this.cookieService.get('ulogovan')=='true')?true:false;
+    this.minimalnaPorudzbina = this.restoranService.getMinCenaNarudzbineById(this.restoranId);
     if(this.cookieService.get("email")!=""){
       this.omiljenRestoran = this.korisnikService.isOmiljenRestoran(this.cookieService.get("email"),this.restoranId);
     }else{
@@ -107,6 +109,10 @@ export class JelovnikComponent implements OnInit {
   ukloniOmiljenRestoran(){
     this.korisnikService.ukloniOmiljenRestoran(this.cookieService.get("email"),this.restoranId);
     this.omiljenRestoran = false;
+  }
+
+  getOcena(id):string{
+    return this.restoranService.getOcenaById(id);
   }
   
 }

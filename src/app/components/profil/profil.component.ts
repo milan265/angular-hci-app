@@ -3,9 +3,9 @@ import { Title } from '@angular/platform-browser';
 import { CookieService } from 'ngx-cookie-service';
 import { KorisnikService } from 'src/app/services/korisnik.service';
 import { MatSnackBar } from '@angular/material';
-import { Korisnik } from 'src/app/models/korisnik.model';
 import { NgForm } from '@angular/forms';
 import { AppComponent } from 'src/app/app.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profil',
@@ -31,14 +31,18 @@ export class ProfilComponent implements OnInit {
   korisnikbrojTelefona:string;
 
   constructor(private titleService: Title, private cookieService: CookieService, private appComponent: AppComponent,
-              private korisnikService: KorisnikService, private snackBar: MatSnackBar) { }
+              private korisnikService: KorisnikService, private snackBar: MatSnackBar, private router: Router) { }
 
   ngOnInit() {
-    this.titleService.setTitle("Profil");
-    this.email = this.cookieService.get("email");
-    this.korisnikIme = this.korisnikService.getImeByEmail(this.email);
-    this.korisnikPrezime = this.korisnikService.getPrezimeByEmail(this.email);
-    this.korisnikbrojTelefona = this.korisnikService.getBrojTelefonaByEmail(this.email);
+    if(this.cookieService.get("ulogovan")=="false"){
+      this.router.navigate(["404"]);
+    }else{
+      this.titleService.setTitle("Profil");
+      this.email = this.cookieService.get("email");
+      this.korisnikIme = this.korisnikService.getImeByEmail(this.email);
+      this.korisnikPrezime = this.korisnikService.getPrezimeByEmail(this.email);
+      this.korisnikbrojTelefona = this.korisnikService.getBrojTelefonaByEmail(this.email);
+    }
   }
   
   onSubmitPodaci(form:NgForm){

@@ -43,6 +43,7 @@ import { DialogDodajComponent } from './components/adrese/dialog-dodaj/dialog-do
 import { DialogIzbrisiKorpaComponent } from './components/korpa/dialog-izbrisi-korpa/dialog-izbrisi-korpa.component';
 import { DialogOtkaziComponent } from './components/narudzbine/aktivne/dialog-otkazi/dialog-otkazi.component';
 import { DialogOceniNarudzbinuComponent } from './components/narudzbine/istorija/dialog-oceni-narudzbinu/dialog-oceni-narudzbinu.component';
+import { PretragaComponent } from './components/pretraga/pretraga.component';
 
 
 @NgModule({
@@ -73,7 +74,8 @@ import { DialogOceniNarudzbinuComponent } from './components/narudzbine/istorija
     DialogDodajComponent,
     DialogIzbrisiKorpaComponent,
     DialogOtkaziComponent,
-    DialogOceniNarudzbinuComponent
+    DialogOceniNarudzbinuComponent,
+    PretragaComponent
   ],
   imports: [
     BrowserModule,

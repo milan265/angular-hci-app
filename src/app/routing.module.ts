@@ -13,6 +13,7 @@ import { UtisciComponent } from './components/utisci/utisci.component';
 import { UsloviKoriscenjaComponent } from './components/uslovi-koriscenja/uslovi-koriscenja.component';
 import { PrikazRestoranaComponent } from './components/prikaz-restorana/prikaz-restorana.component';
 import { KorpaComponent } from './components/korpa/korpa.component';
+import { PretragaComponent } from './components/pretraga/pretraga.component';
 
 const rute: Routes = [
     {path:'', component:PocetnaComponent},
@@ -27,7 +28,8 @@ const rute: Routes = [
     {path: '404', component: Page404Component},
     {path: 'uslovi-koriscenja', component: UsloviKoriscenjaComponent},
     {path: 'prikaz-restorana', component: PrikazRestoranaComponent},
-    {path: 'korpa', component: KorpaComponent}
+    {path: 'korpa', component: KorpaComponent},
+    {path: 'pretraga', component: PretragaComponent}
 ];
 
 @NgModule({

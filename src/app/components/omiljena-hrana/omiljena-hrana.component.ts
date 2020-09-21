@@ -9,6 +9,7 @@ import { KorisnikService } from 'src/app/services/korisnik.service';
 import { Obrok } from 'src/app/models/obrok.model';
 import { DodavanjePrilogaComponent } from 'src/app/components/prikaz-restorana/dodavanje-priloga/dodavanje-priloga.component'; 
 import { RestoranService } from 'src/app/services/restoran.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-omiljena-hrana',
@@ -26,19 +27,25 @@ export class OmiljenaHranaComponent implements OnInit {
 
   constructor(private titleService: Title, private cookieService: CookieService, 
               private obrokService: ObrokService,private dialog: MatDialog, 
-              private korisnikService: KorisnikService, private restoranService: RestoranService) { }
+              private korisnikService: KorisnikService, private restoranService: RestoranService,
+              private router: Router) { }
 
   ngOnInit() {
-    this.titleService.setTitle("Omiljena hrana");
-    this.omiljenaHrana = this.korisnikService.getOmiljenaHrana(this.cookieService.get("email"));
-    this.omiljenaHrana.forEach(id=>this.obroci.push(this.obrokService.getObrokById(id)));
-    var sveKategorije = this.obroci.map(e=>e.kategorija);
-    this.kategorije = sveKategorije.filter((v, i, a) => a.indexOf(v) === i); 
-    if(this.omiljenaHrana.length>0){
-      this.imaOmiljenih = true;
+    if(this.cookieService.get("ulogovan")=="false"){
+      this.router.navigate(["404"]);
     }else{
-      this.imaOmiljenih = false;
+      this.titleService.setTitle("Omiljena hrana");
+      this.omiljenaHrana = this.korisnikService.getOmiljenaHrana(this.cookieService.get("email"));
+      this.omiljenaHrana.forEach(id=>this.obroci.push(this.obrokService.getObrokById(id)));
+      var sveKategorije = this.obroci.map(e=>e.kategorija);
+      this.kategorije = sveKategorije.filter((v, i, a) => a.indexOf(v) === i); 
+      if(this.omiljenaHrana.length>0){
+        this.imaOmiljenih = true;
+      }else{
+        this.imaOmiljenih = false;
+      }
     }
+    
   }
 
   @HostListener('window:scroll', [])

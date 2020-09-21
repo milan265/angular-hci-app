@@ -57,7 +57,8 @@
         
         <div>
             <button mat-raised-button color="primary" [mat-dialog-close]="false">Odustani</button>
-            <button mat-raised-button color="warn" [mat-dialog-close]="true" [disabled]="!ulogovan" (click)="dodajUKorpu()">Dodaj u korpu</button>
+            <button mat-raised-button *ngIf="!ulogovan" color="warn" [mat-dialog-close]="false" routerLink="/prijava">Prijavite se</button>
+            <button mat-raised-button *ngIf="ulogovan" color="warn" [mat-dialog-close]="true" (click)="dodajUKorpu()">Dodaj u korpu</button>
         </div>
     </mat-dialog-actions>
 </section>

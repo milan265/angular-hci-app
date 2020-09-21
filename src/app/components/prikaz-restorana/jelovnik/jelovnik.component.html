@@ -43,7 +43,7 @@
                 <div fxLayoutAlign="center center">
                     <img src="{{getLogo()}}" alt="logo">
                 </div>
-                <div fxLayout="column" fxLayoutAlign="center center">
+                <div fxLayout="column" fxLayoutAlign="center center"  fxLayoutGap="10px">
                     <span fxLayout="row" fxLayoutAlign="center center">
                         {{restoran.naziv}} 
                         <button *ngIf="ulogovan && !omiljenRestoran" mat-icon-button matTooltip="Dodaj u omiljenim restoranima" (click)="dodajOmiljenRestoran()">
@@ -54,8 +54,11 @@
                         </button>
                     </span>
                     <span>
-                        <bar-rating [rate]="restoran.ocena" [showText]="true" [readOnly]="true" [max]="5" theme="fontawesome-o"></bar-rating>
+                        <bar-rating [rate]="getOcena(restoran.id)" [showText]="true" [readOnly]="true" [max]="5" theme="fontawesome-o"></bar-rating>
                     </span>  
+                    <span class="min-porudzbina">
+                        Minimalna porudžbina {{minimalnaPorudzbina}},00RSD
+                    </span>
                     <div *ngIf="imaMapu">
                         <iframe [src]="mapa" width="250" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                     </div>
@@ -72,7 +75,7 @@
                 <div fxLayoutAlign="center center">
                     <img src="{{getLogo()}}" alt="logo">
                 </div>
-                <div fxLayout="column" fxLayoutAlign="center center">
+                <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
                     <span fxLayout="row" fxLayoutAlign="center center">
                         {{restoran.naziv}} 
                         <button *ngIf="ulogovan && !omiljenRestoran" mat-icon-button matTooltip="Dodaj u omiljenim restoranima" (click)="dodajOmiljenRestoran()">
@@ -83,8 +86,11 @@
                         </button>
                     </span>
                     <span>
-                        <bar-rating [rate]="restoran.ocena" [showText]="true" [readOnly]="true" [max]="5" theme="fontawesome-o"></bar-rating>
+                        <bar-rating [rate]="getOcena(restoran.id)" [showText]="true" [readOnly]="true" [max]="5" theme="fontawesome-o"></bar-rating>
                     </span>  
+                    <span class="min-porudzbina">
+                        Minimalna porudžbina {{minimalnaPorudzbina}},00RSD
+                    </span>
                     <div *ngIf="imaMapu">
                         <iframe [src]="mapa" width="250" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                     </div>

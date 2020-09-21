@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
 
   ruteNijePrijavljen: Array<string> = ["/","/registracija","/prijava","/uslovi-koriscenja","/prikaz-restorana"];  
   rutePrijavljen: Array<string> = ["/","/profil","/narudzbine","/omiljena-hrana","/omiljeni-restorani",
-                                  "/adrese","/utisci","/uslovi-koriscenja","/prikaz-restorana","/korpa"];
+                                  "/adrese","/utisci","/uslovi-koriscenja","/prikaz-restorana","/korpa","/pretraga"];
   prijavljenKorisnikIme: string;
 
 
@@ -80,5 +80,4 @@ export class AppComponent implements OnInit {
     this.cookieService.set("kolacici","true");
   }
 
-  
 }

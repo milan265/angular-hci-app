@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { Title } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { Adresa } from 'src/app/models/adresa.model';
 import { KorisnikService } from 'src/app/services/korisnik.service';
@@ -18,11 +19,15 @@ export class AdreseComponent implements OnInit {
   adrese: Array<Adresa> = [];
 
   constructor(private titleService: Title, private cookieService: CookieService,
-             private korisnikService: KorisnikService, private dialog: MatDialog) { }
+             private korisnikService: KorisnikService, private dialog: MatDialog, private router: Router) { }
 
   ngOnInit() {
-    this.titleService.setTitle("Adrese");
-    this.adrese = this.korisnikService.getAdreseByEmail(this.cookieService.get("email"));
+    if(this.cookieService.get("ulogovan")=="false"){
+      this.router.navigate(["404"]);
+    }else{
+      this.titleService.setTitle("Adrese");
+      this.adrese = this.korisnikService.getAdreseByEmail(this.cookieService.get("email"));
+    }
   }
 
   imaBrojStana(adresa: Adresa):boolean{

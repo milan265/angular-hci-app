@@ -86,7 +86,7 @@ export class NarudzbinaService {
             komentar: "",
             sifra: "Bs12a",
             korisnik: 1,
-            tip: "zavrsena",
+            tip: "završena",
             ocenjena: false
     
         }

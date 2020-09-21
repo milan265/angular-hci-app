@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-narudzbine',
@@ -8,10 +10,14 @@ import { Title } from '@angular/platform-browser';
 })
 export class NarudzbineComponent implements OnInit {
 
-  constructor(private titleService: Title) { }
+  constructor(private titleService: Title, private router: Router, private cookieService: CookieService) { }
 
   ngOnInit() {
-    this.titleService.setTitle("Narudžbine");
+    if(this.cookieService.get("ulogovan")=="false"){
+      this.router.navigate(["404"]);
+    }else{
+      this.titleService.setTitle("Narudžbine");
+    } 
   }
 
 }

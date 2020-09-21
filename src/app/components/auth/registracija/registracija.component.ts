@@ -31,8 +31,12 @@ export class RegistracijaComponent implements OnInit {
       private router: Router, private snackBar: MatSnackBar) { }
 
   ngOnInit() {
-    this.titleService.setTitle("Registracija");
-    this.gradovi = Object.keys(this.gradoviService.getGradRegion());
+    if(this.cookieService.get("ulogovan")=="true"){
+      this.router.navigate(["404"]);
+    }else{
+      this.titleService.setTitle("Registracija");
+      this.gradovi = Object.keys(this.gradoviService.getGradRegion());
+    }
   }
 
   podesiRegione(){

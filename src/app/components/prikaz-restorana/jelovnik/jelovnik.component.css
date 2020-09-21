@@ -91,3 +91,7 @@ mat-card{
 .info img{
     width: 90px;
 }
+
+.min-porudzbina{
+    font-weight: bold;
+}

@@ -57,7 +57,9 @@ export class PocetnaComponent implements OnInit {
     this.router.navigate(['prikaz-restorana']);
   }
 
-  
+  getOcena(id):string{
+    return this.restoranService.getOcenaById(id);
+  }
 
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();

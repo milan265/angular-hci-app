@@ -30,7 +30,7 @@
                     {{restorani[brKolona*red+kolona].naziv}}
                   </p>
                   <p>
-                    <bar-rating [rate]="restorani[brKolona*red+kolona].ocena" [showText]="true" [readOnly]="true" [max]="5" theme="fontawesome-o"></bar-rating>
+                    <bar-rating [rate]="getOcena(restorani[brKolona*red+kolona].id)" [showText]="true" [readOnly]="true" [max]="5" theme="fontawesome-o"></bar-rating>
                   </p>
                 </mat-card-content>
             </mat-card>    

@@ -27,7 +27,11 @@ export class PrijavaComponent implements OnInit {
             private snackBar: MatSnackBar, private dialog: MatDialog) { }
 
   ngOnInit() {
-    this.titleService.setTitle("Prijava");
+    if(this.cookieService.get("ulogovan")=="true"){
+      this.router.navigate(["404"]);
+    }else{
+      this.titleService.setTitle("Prijava");
+    }
   }
 
   onSubmit(form: NgForm){

@@ -9,7 +9,6 @@ export interface Restoran{
     logo: string;
     cover: string;
     obroci: Array<number>;
-    ocena?: number;
     utisci?: Array<Utisak>;
     kategorije: Array<string>;
     tagovi: Array<string>;

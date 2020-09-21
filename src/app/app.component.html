@@ -17,6 +17,10 @@
                 <mat-icon>person_outline</mat-icon>
                 {{prijavljenKorisnikIme}}
             </a>
+            <a *ngIf="ulogovan" mat-list-item routerLink="/pretraga" (click)="sidenav.close()">
+                <mat-icon>search</mat-icon>
+                Pretraga
+            </a>
             <a *ngIf="ulogovan" mat-list-item routerLink="/narudzbine" (click)="sidenav.close()">
                 <mat-icon matBadge="{{neocenjeneNarudzbine()}}" matBadgeColor="warn">list</mat-icon>
                 Narudžbine
@@ -66,6 +70,10 @@
                     <button *ngIf="ulogovan" mat-button routerLink="/profil">
                         <mat-icon>person_outline</mat-icon>
                         {{prijavljenKorisnikIme}}    
+                    </button>
+                    <button *ngIf="ulogovan" mat-button routerLink="/pretraga">
+                        <mat-icon>search</mat-icon>
+                        Pretraga
                     </button>
                     <button   *ngIf="ulogovan" mat-button routerLink="/narudzbine">
                         <mat-icon matBadge="{{neocenjeneNarudzbine()}}" matBadgeColor="warn">list</mat-icon>
