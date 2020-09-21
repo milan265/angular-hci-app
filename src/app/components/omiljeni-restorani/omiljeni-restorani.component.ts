@@ -26,15 +26,11 @@ export class OmiljeniRestoraniComponent implements OnInit {
     }else{
       this.titleService.setTitle("Omiljeni restorani");
       this.email = this.cookieService.get("email");
-      this.podaci();
+      this.korisnikService.getOmiljeniRestorani(this.email).forEach(id=>{
+        this.restorani.push(this.restoranService.getRestoranById(id));
+      });
+      this.imaOmiljenih = this.restorani.length>0? true:false;
     }
-  }
-
-  podaci():void{
-    this.korisnikService.getOmiljeniRestorani(this.email).forEach(id=>{
-      this.restorani.push(this.restoranService.getRestoranById(id));
-    });
-    this.imaOmiljenih = this.restorani.length>0? true:false;
   }
 
   getOcena(id:number):string{

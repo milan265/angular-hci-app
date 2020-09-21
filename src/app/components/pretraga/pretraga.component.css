@@ -4,6 +4,7 @@
 .restorani{
     padding: 30px;
     background-color: #f7f7f7;
+    height: max-content;
 }
 
 .naziv{
@@ -41,4 +42,42 @@ mat-card{
 
 .pointer{
     cursor: pointer;
+}
+
+
+.kategorije-meni{
+    overflow: auto;
+    padding-left: 30px;
+}
+
+.kategorije-meni > div:hover{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(126, 126, 126, 0.3);
+}
+
+.kategorije-meni > div{
+    margin: 15px;
+}
+
+.kategorije-naslov{
+    font-weight: bold;
+    padding-left: 10px;
+    font-size: 18px;
+}
+
+.kategorije-meni mat-checkbox{
+    padding-left: 10px;
+}
+
+.kategorije-meni-fixed{
+    height: 500px;
+    width: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+}
+
+::ng-deep .mat-checkbox-layout,::ng-deep .mat-checkbox-label{
+    width: 100%;
 }

@@ -21,7 +21,7 @@ export class RestoranService {
             cover: "../../assets/slike/restorani/grill51/cover.png",
             obroci:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27],
             kategorije:["Roštilj","Piletina","Pohovano","Sendviči","Pomfrit","Palačinke","Piće"],
-            tagovi:["rostilj","piletina","pohovano","sendvic","sendvici","pomfrit","slatke palacinke","palacinke","pice"],
+            tagovi:["Roštilj","Piletina","Pohovano","Sendviči","Pomfrit","Slatke palačinke","Palačinke","Piće"],
             minCenaNarudzbine: 600,
             utisci:[
                 {
@@ -61,7 +61,7 @@ export class RestoranService {
             cover: "../../assets/slike/restorani/pile&prase/cover.png",
             obroci:[28,29,30,31,32,33,34,35,36,37,38,39],
             kategorije:["Roštilj","Palačinke","Ostalo","Piće"],
-            tagovi:["rostilj","sendvici","sendvic","slane palacinke","palacinke","slatke palacinke","pomfrit","pice"],            minCenaNarudzbine: 800 ,
+            tagovi:["Roštilj","Sendviči","Slane palačinke","Palačinke","Slatke palčinke","Pomfrit","Piće"],            minCenaNarudzbine: 800 ,
             utisci: [
                 {
                     ocena: 4,
@@ -121,7 +121,7 @@ export class RestoranService {
             cover: "../../assets/slike/restorani/walter/cover.png",
             obroci:[40,41,42,43,44,45,46,47,48,49,50,51,52,53,54],
             kategorije:["Roštilj","Salate","Pomfrit","Palačinke","Piće"],
-            tagovi:["rostilj","salate","salata","pomfrit","palacinke","deserti","pice"],
+            tagovi:["Roštilj","Salate","Pomfrit","Palačinke","Deserti","Piće"],
             minCenaNarudzbine: 800,
             utisci:[
                 {
@@ -160,7 +160,7 @@ export class RestoranService {
             cover: "../../assets/slike/restorani/big-pizza/cover.png",
             obroci:[55,56,57,58,59,60,61],
             kategorije:["Pica"],
-            tagovi:["pica","pizza","italijanska"],
+            tagovi:["Pica","Italijanska hrana"],
             minCenaNarudzbine: 600,
             utisci:[
                 {
@@ -199,7 +199,7 @@ export class RestoranService {
             cover: "../../assets/slike/restorani/napoli/cover.png",
             obroci:[68,69,70,71],
             kategorije:["Pica"],
-            tagovi:["pica","pizza","italijanska"],
+            tagovi:["Pica","Italijanska hrana"],
             minCenaNarudzbine: 600,
             utisci:[
                 {
@@ -245,7 +245,7 @@ export class RestoranService {
             cover: "../../assets/slike/restorani/brooklyn-pizza/cover.png",
             obroci:[62,63,64,65,66,67],
             kategorije:["Pica"],
-            tagovi:["pica","pizza","italijanska"],
+            tagovi:["Pica","Italijanska hrana"],
             minCenaNarudzbine: 700,
             utisci:[
                 {
@@ -277,7 +277,7 @@ export class RestoranService {
             cover: "../../assets/slike/restorani/kasper-le-mesko/cover.png",
             obroci:[72,73,74,75],
             kategorije:["Pica"],
-            tagovi:["pica","pizza","italijanska","rostilj","sendvici","pohovano","palacinke"],
+            tagovi:["Pica","Italijanska hrana"],
             minCenaNarudzbine: 600,
             utisci:[]   
         },
@@ -287,14 +287,14 @@ export class RestoranService {
             adrese:[{
                 grad: "Beograd",
                 region: "Dušanovac",
-                ulica: "",
+                ulica: "Online naručivanje",
                 broj: ""}],
             opis: "",
             logo: "../../assets/slike/restorani/madness/logo.png",
             cover: "../../assets/slike/restorani/madness/cover.png",
             obroci:[76,77,78,79],
             kategorije:["Pica"],
-            tagovi:["pica","pizza","italijanska","rostilj","sendvici","palacinke","slatke palacinke"],
+            tagovi:["Pica","Italijanska hrana"],
             minCenaNarudzbine: 500,
             utisci:[]   
         },
@@ -311,7 +311,7 @@ export class RestoranService {
             cover: "../../assets/slike/restorani/intergalactic-diner/cover.png",
             obroci:[80,81,82,83,84],
             kategorije:["Burgeri junetina","Burgeri piletina", "Burger vegetarijanski"],
-            tagovi:["burgeri"],
+            tagovi:["Burgeri"],
             minCenaNarudzbine: 900,
             utisci:[
                 {
@@ -357,7 +357,7 @@ export class RestoranService {
             cover: "../../assets/slike/restorani/mcdonalds/cover.png",
             obroci:[85,86,87,88,89,90,91,92,93,94,95,96,97,98],
             kategorije:["Mc Obrok","Burgeri","Pomfrit","Šejkovi"],
-            tagovi:["obrok","burgeri","pomfrit","sejkovi"],
+            tagovi:["Obrok","Burgeri","Pomfrit","Šejkovi"],
             minCenaNarudzbine: 600,
             utisci:[
                 {
@@ -389,7 +389,7 @@ export class RestoranService {
             cover: "../../assets/slike/restorani/soya-sos/cover.png",
             obroci:[111,112,113,114,115],
             kategorije:["Piletina","Svinjetina","Desert"],
-            tagovi:["piletina","svinjetina","teletina","desert","kineska"],
+            tagovi:["Piletina","Svinjetina","Desert","Kineska hrana"],
             minCenaNarudzbine: 800,
             utisci:[]   
         },
@@ -406,7 +406,7 @@ export class RestoranService {
             cover: "../../assets/slike/restorani/black-white/cover.png",
             obroci:[104,105,106,107,108,109,110],
             kategorije:["Piletina","Svinjetina","Teletina","Desert"],
-            tagovi:["piletina","svinjetina","teletina","desert","kineska"],
+            tagovi:["Piletina","Svinjetina","Teletina","Desert","Kineska hrana"],
             minCenaNarudzbine: 800,
             utisci:[
                 {
@@ -452,7 +452,7 @@ export class RestoranService {
             cover: "../../assets/slike/restorani/giros-kod-bucka/cover.png",
             obroci:[99,100,101,102,103],
             kategorije:["Giros"],
-            tagovi:["giros"],
+            tagovi:["Giros","Grčka hrana"],
             minCenaNarudzbine: 700,
             utisci:[]   
         }
@@ -514,9 +514,13 @@ export class RestoranService {
 
     getOcenaById(id):string{
         let suma = 0;
+        let ocena = "0";
         let utisci = this.restoranPodaci.find(restoran=> restoran.id==id).utisci;
-        utisci.forEach(utisak => suma += utisak.ocena);
-        return (suma/utisci.length).toFixed(1);
+        if(utisci.length>0){
+            utisci.forEach(utisak => suma += utisak.ocena);
+            ocena = (suma/utisci.length).toFixed(1);
+        }
+        return ocena;
     }
 
     dodajUtisak(korisnikId:number, restoranId: number, ocena:number, komentar:string):void{
@@ -528,5 +532,22 @@ export class RestoranService {
             vreme: new Date()
         };
         this.restoranPodaci.find(restoran => restoran.id == restoranId).utisci.push(utisak);
+    }
+
+    getJedinstveniTagovi():Array<string>{
+        let tagovi = this.restoranPodaci.map(restoran=> restoran.tagovi)
+                                            .reduce((r1,r2)=>r1.concat(r2))
+                                            .filter((v, i, a) => a.indexOf(v) === i);
+        return tagovi;
+    }
+
+    getRestoraniByTag(tag:string):Array<Restoran>{
+        let restorani: Array<Restoran> = [];
+        this.restoranPodaci.forEach(restoran=> {
+            if(restoran.tagovi.includes(tag)){
+                restorani.push(restoran);
+            }
+        });
+        return restorani;
     }
 }

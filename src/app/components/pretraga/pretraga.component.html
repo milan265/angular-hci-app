@@ -1,6 +1,30 @@
 <section class="mainHeight">
     <div id="ima-restorana" *ngIf="imaRestorana" fxLayout="row">
-        <div fxFlex="25" fxLayout="column">
+        <div *ngIf="!kategorijaFixed" fxLayout="column" fxFlex="25" class="kategorije-meni">
+            <p class="kategorije-naslov">Kategorije</p>
+            <div>
+                <mat-checkbox [(ngModel)]="sveKategorije" (click)="prikaziSveKategorije()">Prikaži sve kategorije</mat-checkbox>
+            </div>
+            <div *ngFor="let kategorija of kategorije; let i=index">
+                <mat-checkbox [(ngModel)]="check[i]" (click)="checkBoxClick(i)">
+                    {{kategorija}}
+                </mat-checkbox>
+            </div>
+        </div> 
+        
+        <div *ngIf="kategorijaFixed" fxLayout="column" fxFlex="25" class="kategorije-meni kategorije-meni-fixed">
+            <p class="kategorije-naslov">Kategorije</p>
+            <div>
+                <mat-checkbox [(ngModel)]="sveKategorije" (click)="prikaziSveKategorije()">Prikaži sve kategorije</mat-checkbox>
+            </div>
+            <div *ngFor="let kategorija of kategorije; let i=index">
+                <mat-checkbox [(ngModel)]="check[i]" (click)="checkBoxClick(i)">
+                    {{kategorija}}
+                </mat-checkbox>
+            </div>
+        </div>
+        <div *ngIf="kategorijaFixed" fxFlex="25">
+
         </div>
         <div class="restorani" fxFlex="50">
             <div class="pointer" *ngFor="let restoran of restorani" fxLayout="column" (click)="prikaziRestoran(restoran.id)">
@@ -13,7 +37,7 @@
                             <span class="naziv">{{restoran.naziv}}</span>
                             <span class="opis">{{restoran.adrese[0].ulica}} {{restoran.adrese[0].broj}}, {{restoran.adrese[0].grad}}</span>
                             <span> 
-                                <bar-rating [rate]="getOcena(restoran.id)" [readOnly]="true" [max]="5" theme="fontawesome"></bar-rating>
+                                <bar-rating [rate]="getOcena(restoran.id)" [readOnly]="true" [max]="5" theme="fontawesome-o"></bar-rating>
                             </span>
                         </div>
                         <div fxFlex="20" fxLayout="column" fxLayoutGap="10px">

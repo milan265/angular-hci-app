@@ -79,7 +79,6 @@ export class DodavanjePrilogaComponent implements OnInit {
   }
 
   checkBoxClick(prilogId){
-    
     if(this.check[prilogId]){
       this.cenaDodatka -= this.dodatakObrokuService.getCenaById(prilogId);
       this.izracunajUkupnuCenu();
@@ -87,7 +86,6 @@ export class DodavanjePrilogaComponent implements OnInit {
       this.cenaDodatka += this.dodatakObrokuService.getCenaById(prilogId);
       this.izracunajUkupnuCenu();
     }
-
   }
 
   radioButtonClick(prilogId){
