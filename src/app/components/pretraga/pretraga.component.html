@@ -1,4 +1,23 @@
-<section class="mainHeight">
+<section class="mainHeight" fxLayout="column">
+    <div fxLayoutAlign="center center">
+        <form id="form-pretraga">
+            <mat-form-field>
+                <input matInput (keyup)="pretragaRestorana($event)" type="text" placeholder="Pretražite restorane">
+            </mat-form-field>
+            <div class="prikaz-restorana-pretraga" *ngIf="restoraniPretraga!=undefined">
+                <div class="pretraga-sadrzaj" *ngFor="let restoran of restoraniPretraga" (click)="prikaziRestoran(restoran.id)">
+                    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px">
+                        <img src="{{restoran.logo}}" alt="logo">
+                        <span>{{restoran.naziv}}</span>
+                    </div>
+                </div>
+                <div class="nema-trazenog-restorana" *ngIf="restoraniPretraga!=undefined && restoraniPretraga.length==0">
+                  <span>Nema traženog restorana</span>
+                </div> 
+            </div>
+        </form>
+    </div>
+
     <div id="ima-restorana" *ngIf="imaRestorana" fxLayout="row">
         <div *ngIf="!kategorijaFixed" fxLayout="column" fxFlex="25" class="kategorije-meni">
             <p class="kategorije-naslov">Kategorije</p>

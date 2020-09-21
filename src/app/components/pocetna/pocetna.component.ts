@@ -2,9 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Restoran } from 'src/app/models/restoran.model';
 import { RestoranService } from 'src/app/services/restoran.service';
-import { FormControl } from '@angular/forms';
-import { Observable } from 'rxjs';
-import {map, startWith} from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { ScrollToService } from 'src/app/services/scroll-to.service';
@@ -29,10 +26,6 @@ export class PocetnaComponent implements OnInit {
   brKolonaManji: number = this.brojKolonaManji.length;
   brRedovaManji: number = this.brojRedovaManji.length;
 
-  myControl = new FormControl();
-  options: Array<string> = ["jedan"];
-  filteredOptions: Observable<string[]>;
-  
   constructor(private titleService: Title, private router: Router, private cookieService: CookieService, 
               private restoranService: RestoranService, private scrollToService: ScrollToService) { }
 
@@ -41,12 +34,6 @@ export class PocetnaComponent implements OnInit {
     this.titleService.setTitle("Dostava hrane");
     this.restorani = this.restoranService.najboljiRestorani(this.brKolona*this.brRedova);
     this.restoraniManji = this.restoranService.najboljiRestorani(this.brKolonaManji*this.brRedovaManji);
-    
-    this.filteredOptions = this.myControl.valueChanges
-      .pipe(
-        startWith(''),
-        map(value => this._filter(value))
-      );
   }
   getSlika(){
     return this.slika;
@@ -60,10 +47,5 @@ export class PocetnaComponent implements OnInit {
   getOcena(id):string{
     return this.restoranService.getOcenaById(id);
   }
-
-  private _filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
-
-    return this.options.filter(option => option.toLowerCase().includes(filterValue));
-  }
+  
 }

@@ -19,6 +19,7 @@ export class PretragaComponent implements OnInit {
   check: Array<boolean>=[];
   kategorije: Array<string> = [];
   sveKategorije: boolean = true;
+  restoraniPretraga: Array<Restoran>;
 
 
   constructor(private titleService: Title, private cookieService: CookieService, private router: Router,
@@ -106,7 +107,15 @@ export class PretragaComponent implements OnInit {
       this.sveKategorije = false;
       this.restorani = this.restorani.filter((v, i, a) => a.indexOf(v) === i);
     }
+  }
 
-
+  pretragaRestorana(e:any){
+    if (e.target.value == '') {
+      this.restoraniPretraga = undefined;
+      return;
+    }
+    this.restoraniPretraga = this.restoranService.getSviRestorani()
+                            .filter(restoran => 
+                              restoran.naziv.toLowerCase().includes(e.target.value.toLowerCase())).slice(0,5);
   }
 }

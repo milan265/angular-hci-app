@@ -15,7 +15,8 @@ export class OmiljeniRestoraniComponent implements OnInit {
 
   imaOmiljenih: boolean = false;
   restorani: Array<Restoran> = [];
-  email: string = ""
+  email: string = "";
+  restoraniPretraga: Array<Restoran>;
 
   constructor(private titleService: Title, private cookieService: CookieService, private router: Router,
               private restoranService: RestoranService, private korisnikService: KorisnikService) { }
@@ -40,6 +41,16 @@ export class OmiljeniRestoraniComponent implements OnInit {
   prikaziRestoran(id:number):void{
     this.cookieService.set("restoran_id",id.toString());
     this.router.navigate(['prikaz-restorana']);
+  }
+
+  pretragaRestorana(e:any){
+    if (e.target.value == '') {
+      this.restoraniPretraga = undefined;
+      return;
+    }
+    this.restoraniPretraga = this.restorani.filter(restoran => 
+                              restoran.naziv.toLowerCase().includes(e.target.value.toLowerCase()))
+                              .slice(0,5);
   }
 
 }

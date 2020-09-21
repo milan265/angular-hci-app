@@ -1,24 +1,11 @@
-<section class="mainHeight" fxLayout="column" fxLayoutGap="50px">
+<section class="mainHeight" fxLayout="column" >
     <div>
         <div class="background-image" fxLayout="column" fxLayoutAlign="center center" [ngStyle]="{'background-image': getSlika()}">
             <h1>Dostava hrane</h1>
             <p>Poručite svoju omiljenu hranu brzo i lako</p>
         </div>
     </div>
-    
-    <div fxLayoutAlign="center center">
-      <form class="example-form">
-        <mat-form-field class="example-full-width">
-          <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
-          <mat-autocomplete #auto="matAutocomplete">
-            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-              {{option}}
-            </mat-option>
-          </mat-autocomplete>
-        </mat-form-field>
-      </form>
-    </div>
-    
+  
     <div fxHide.lt-md class="restorani-pocetna" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
         <div fxLayout="column" fxLayoutGap="50px">
           <h1>Najbolje ocenjeni restorani</h1>

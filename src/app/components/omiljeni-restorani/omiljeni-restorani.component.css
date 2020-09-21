@@ -1,5 +1,8 @@
+section{
+    margin-top: 50px;
+}
 #ima-restorana{
-    margin-top: 100px;
+    margin-top: 50px;
 }
 .restorani{
     padding: 30px;
@@ -41,4 +44,38 @@ mat-card{
 
 .pointer{
     cursor: pointer;
+}
+
+/*pretraga*/
+#form-pretraga{
+    width: 50%;
+}
+
+#form-pretraga mat-form-field{
+    width: 100%;
+}
+
+.pretraga-sadrzaj{
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    color: white;
+}
+.pretraga-sadrzaj img{
+    width: 50px;
+}
+.pretraga-sadrzaj>div:hover{
+    background-color: rgba(66, 58, 58, 0.6);
+}
+
+.prikaz-restorana-pretraga{
+    width: 48%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    z-index: 99;
+}
+
+.nema-trazenog-restorana{
+    color: white;
 }
